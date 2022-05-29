@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'new_post_2.css' %}"/> 
+{% endblock css %}
+
+{% block content %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="photo" accept=".jpg, .jpeg, .png">
+    <select name="emotion">
+        {% for emotion in emotions %}
+        <option value="{{emotion.pk}}">{{emotion.status}}</option>
+        {% endfor %}
+    </select>
+    <textarea name="content" placeholder="내용을 작성하세요."></textarea>
+    <input type="hidden" name="date" value="">
+    <button type="submit">
+        완료
+    </button>
+
+</form>
+{% endblock content %}

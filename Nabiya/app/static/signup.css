@@ -1,0 +1,80 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    font-weight: 500;
+}
+
+body {
+    max-width: 360px;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.body_container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    border: solid 1px;
+    /* justify-content: center; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+ 
+    background-color: #C0C2FF;
+}
+
+.signup {
+    margin-top: 5vh;
+}
+input {
+    font-size: 20px;
+    border: 0;
+    background-color:#C0C2FF;
+    border-bottom: solid 2px;
+    border-color: white;
+    padding-left: 3%;
+}
+
+input::placeholder {
+    color: white;
+}
+
+#arrow {
+    box-sizing: border-box;
+
+    font-size: 25px;
+    color: white;
+    margin-top: 10%;
+
+}
+
+.signup_text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    margin-top: 20vh;
+}
+
+h3 {
+    color: white;
+
+}
+
+
+.signup_button {
+
+    width: 230px;
+    height: 48px;
+    margin-top: 15vh;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+
+    border-color: white;
+}
+
+

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block css %}
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'app/add_another_pet.css' %}">
+  {% endblock %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  {% block title %}
+  <div class="title">
+  <P>나의 귀여운 반려동물을 소개해주세요!</P>  
+  {% endblock %}
+  </div>
+</head>
+
+{% block content %}
+<body>
+  <form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <a href="{% url 'home' %}'">뒤로가기</a>
+    
+    <input type="file" id="profile_img" name="profile_img" accept=".jpg, .jpeg, .png">
+    <div>
+        <label for="man">강아지</label>
+        <input type="radio" name="type" value="D" id="dog">
+        <label for="woman">고양이</label>
+        <input type="radio" name="type" value="C" id="cat">
+    </div>
+    <div>
+        이름<input type="text" id="name" name="name" maxlength="50">
+        태어난 날<input type="date" id="birth" name="birth">
+        한줄 소개<input type="text" id="introduction" name="introduction">
+    </div>
+    <button type="submit">submit</button>
+  </form>
+</body>
+{% endblock content %}
+</html>

@@ -1,0 +1,51 @@
+{% extends 'start.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'new_post_2.css' %}"/> 
+{% endblock css %}
+
+{% block content %}
+<form method="POST" runat="server" enctype="multipart/form-data">
+    {% csrf_token %}    
+    <div id="image_container"></div>
+    <label for="image" id="image_button">
+        사진 업로드...
+    </label>
+    <input type="file" id="image" name='photo' accept="image/*" onchange="setThumbnail(event);"/>
+    <script>
+      function setThumbnail(event) {
+        var reader = new FileReader();
+
+        reader.onload = function(event) {
+          var img = document.createElement("img");
+          img.setAttribute("src", event.target.result);
+          document.querySelector("div#image_container").appendChild(img);
+        };
+
+        reader.readAsDataURL(event.target.files[0]);
+      }
+    </script>
+    <ul>
+        <li><input type="radio" name="emotion" value="H" id="cb1" checked/>
+          <label for="cb1"><img src="{% static 'media/즐거워요.PNG'%}" /></label>
+        </li>
+        <li><input type="radio" name="emotion" value="A" id="cb2" checked/>
+            <label for="cb2"><img src="{% static 'media/화나요.PNG'%}" /></label>
+        </li>
+        <li><input type="radio" name="emotion" value="S" id="cb3" checked/>
+            <label for="cb3"><img src="{% static 'media/슬퍼요.PNG'%}" /></label>
+        </li>
+        <li><input type="radio" name="emotion" value="E" id="cb4" checked/>
+            <label for="cb4"><img src="{% static 'media/deli.PNG'%}" /></label>
+        </li>
+        <li><input type="radio" name="emotion" value="Z" id="cb5" checked/>
+            <label for="cb5"><img src="{% static 'media/졸려요.PNG'%}" /></label>
+        </li>
+      </ul>
+    <textarea name="content" placeholder="내용을 작성하세요."></textarea>
+    <button type="submit">
+        완료
+    </button>
+</form>
+
+{% endblock content %}

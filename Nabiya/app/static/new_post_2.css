@@ -1,0 +1,130 @@
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 5%;
+    height: 70%;
+}
+
+textarea {
+    width: 75%;
+    height: 80px;
+    border: 1px solid #C0C2FF;
+    border-radius: 5px;
+    padding : 5%;
+    resize: none;    
+    margin-top: 3%;
+}
+
+#image {
+    display: none;
+}
+
+#image_button {
+    background-color: #C0C2FF;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#image_container {
+    width : 200px;
+    height : 150px;
+    overflow: hidden;
+    align-content: center;
+    border: 5px solid #C0C2FF;
+    margin: 5%;
+    margin-bottom: 3%;
+    border-radius: 5px;
+}
+
+div img{
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.emotion_container{
+    padding: 10px 0px;
+}
+
+.btn {
+    opacity: 0;
+}
+
+input[type="radio"] + label 
+{cursor : pointer;}
+
+
+    ul {
+        list-style-type: none;
+      }
+      
+      li {
+        display: inline-block;
+      }
+      
+      input[type="radio"][id^="cb"] {
+        display: none;
+      }
+      
+      label {
+        border: 1px solid #fff;
+        padding: 10px;
+        display: block;
+        position: relative;
+        margin: 5px 10px 0px;
+        cursor: pointer;
+      }
+      
+      label:before {
+        background-color: white;
+        color: white;
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 28px;
+        transition-duration: 0.4s;
+        transform: scale(0);
+      }
+      
+      label img {
+        height: 50px;
+        width: 50px;
+        transition-duration: 0.2s;
+        transform-origin: 50% 50%;
+      }
+      
+      
+      :checked + label:before {
+        content: "✓";
+        background-color: #C0C2FF;
+        transform: scale(1);
+      }
+      
+      :checked + label img {
+        transform: scale(0.9);
+        box-shadow: 0 0 10px #C0C2FF;
+        border-radius: 5px ;
+        z-index: -1;
+      }
+
+button {
+    border: none;
+    background-color: #C0C2FF;
+    padding: 3% 20%;
+    color: white;
+    margin-top: 5%;
+    font-size: 24px;
+    border-radius: 5px;
+}

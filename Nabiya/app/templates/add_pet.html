@@ -1,0 +1,49 @@
+{% extends 'start.html' %} {% block css %} {% load static %}
+<link rel = "stylesheet" type="text/css" href="{% static 'add_pet.css' %}" />
+{% endblock css %} {% block title %} {% endblock title %}
+
+
+{% block content %}
+<body>
+  <a href="{% url 'signup' %}" id="arrow"><i class="fa-solid fa-arrow-left"></i></a><br>
+    <form action="" method="POST" runat="server" enctype="multipart/form-data">
+      {% csrf_token %}
+      <P id="title">나의 귀여운 반려동물을 소개해주세요!</P> 
+      <div style="display: flex; align-items: center; justify-content: center;">
+        <div id="image_container"></div>  
+      </div> 
+      
+        <label for="image" id="image_button">
+          사진 업로드...
+        </label>
+        <input type="file" id="image" name='profile_img' accept="image/*" onchange="setThumbnail(event);"/>
+        <script>
+          function setThumbnail(event) {
+            var reader = new FileReader();
+    
+            reader.onload = function(event) {
+              var img = document.createElement("img");
+              img.setAttribute("src", event.target.result);
+              document.querySelector("div#image_container").appendChild(img);
+            };
+    
+            reader.readAsDataURL(event.target.files[0]);
+          }
+        </script>      
+        <div class="file">
+        <div class="selection">
+          <br>
+            <input type="radio" name="type" value="d" id="dog"><label for="dog">강아지</label>
+            <input type="radio" name="type" value="c" id="cat"><label for="cat">고양이</label>
+        </div>
+        <br>
+        <div>
+          <h3>이름</h3> <input type="text" id="name" name="name" maxlength="50"><br><br>
+          <h3>태어난 날</h3><input type="date" id="birth" name="birth"><br><br>
+          <h3>한줄 소개</h3><textarea cols="30" rows="3" name="introduction"></textarea><br>
+          <button type="submit">submit</button>
+        </div>  
+    </form>
+</body>
+{% endblock content %}
+</html>

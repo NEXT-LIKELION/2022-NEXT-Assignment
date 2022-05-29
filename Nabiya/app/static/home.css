@@ -1,0 +1,146 @@
+
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  text-decoration: none;
+  color: gray;
+}
+
+body {
+  max-width: 360px;
+  min-height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+
+  padding: 2rem 2rem 0 2rem;
+}
+
+.navbar button {
+  padding: .5rem 1rem;
+  margin: 0 .5rem;
+  background-color: white;
+  border: 3px solid #c0c2ff;
+  border-radius: 1rem;
+  color: gray;
+
+}
+
+
+.calendar {
+  width: 90%;
+  margin: 3rem auto;
+
+}
+
+.month {
+  width: 100%;
+  height: 10rem;
+  background-color: #c0c2ff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+  
+}
+
+.month i {
+  font-size: 2.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+.month h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.month p {
+  font-size: 1.6rem;
+  color: white;
+}
+
+.weekdays {
+  width: 100%;
+  height: 5rem;
+  padding: 0 0.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.weekdays div {
+  font-size: 1.5rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  color: gray;
+  width: calc(44.2rem / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.2rem;
+}
+
+.days div {
+  font-size: 1.4rem;
+  margin: 0.3rem;
+  border-radius: 1rem;
+  width: calc(40.2rem / 7);
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.days div:hover:not(.today) {
+  background-color: #c0c2ff;
+  cursor: pointer;
+}
+
+.prev-date,
+.next-date {
+  opacity: 0.5;
+}
+
+.today {
+  color: #c0c2ff;
+}

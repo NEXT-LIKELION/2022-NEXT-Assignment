@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/4a4d7c6dbc.js" crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'list_tag.css' %}">
+</head>
+<body>
+    <div class="header">
+          <a href="{% url 'home' %}"><i class="fa-solid fa-arrow-left"></i></a>  
+    </div>
+    <div class="container">
+        <div class="form_container">
+            
+            <form method="POST">
+                {% csrf_token %}
+                <div>
+                    <input type="text" name="name" class="tag_input" required>
+                </div>
+                <div>
+                    <button type="submit">태그 등록</button>
+                </div>
+            </form>
+        </div>
+        <div class="tag_container">
+            {% for tag in user.tags.all %}
+            <div class="tag">
+                <span>{{tag.name}}</span>
+                <a href="{% url 'delete_tag' tag.pk %}"><i class="fa-solid fa-x"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+</body>
+</html>

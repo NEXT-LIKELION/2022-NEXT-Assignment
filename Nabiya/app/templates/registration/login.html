@@ -1,0 +1,25 @@
+{% extends 'start.html' %} {% block css %} {% load static %}
+<link rel = "stylesheet" type="text/css" href="{% static 'login.css' %}" />
+{% endblock css %} {% block content %}
+
+<div class="body_container">
+    <section class="login">
+        <a href="{% url 'start' %}" id="arrow"><i class="fa-solid fa-arrow-left"></i></a>
+        <br>
+        <form method="POST">
+            {% csrf_token %} {% if error %}
+            <p>{{error}}</p>
+            {% endif %}
+            <div>
+                <div class="login_text">
+                    <input type="text" name="username" placeholder="이메일"/><br><br><br>
+                    <input type="password" name="password" placeholder="비밀번호"/>
+                </div>
+                <div>
+                    <a href="{% url 'login' %}"><button class="login_button">로그인</button></a>
+                </div>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

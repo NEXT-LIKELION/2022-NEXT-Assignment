@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'day_detail.css' %}"/> 
+{% endblock css %}
+
+{% block content %}
+<div class="todo_link_box">
+    <a href="{% url 'add_todo' date %}" class="link">할일 등록</a>
+</div>    
+{% for todo in todos %}
+<p>{{todo.tag.name}}</p>
+<a href="{% url 'delete_todo' todo.pk date %}">삭제</a>
+{% endfor %}
+
+{% if diary.count == 0 %}
+<a href="{% url 'new_diary' date %}" class="link">일기 쓰기</a>
+<div class="ct_bx">
+    <div class="ct">
+        <img src="{% static 'media/logo.png'%}">
+    </div>
+</div>
+<div class="ment">
+    <p>오늘의 일기를 작성하세요!</p>
+</div>
+{% else %}
+<div class="emotion_box">
+    <div class="emotion">
+        <img src='{{diary.emotion.emoji.url}}'>
+    </div>
+</div>
+<div class="uploaded">
+    {{diary.uploaded}}
+</div>
+<div class="photo_box">
+    <div class="photo">
+        <img src='{{diary.photo.url}}'>    
+    </div>
+</div>
+<div class="content">
+    {{diary.content}}    
+</div>
+<a class=link href="{% url 'home' %}">홈으로</a>
+
+{% endif %}
+{% endblock content %}

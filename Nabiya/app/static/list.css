@@ -1,0 +1,83 @@
+body {
+    max-width: 360px;
+    min-height: 100vh;
+    width: 100%;
+    margin: 0 auto;
+}
+.body_container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: white;
+    
+}
+.nan1{
+    float:left;
+    margin-right:1vh;
+    
+}
+.box11{
+    display: flex;
+    flex-direction: column
+}
+
+.pictt{
+    width: 5vh;
+    height: 5vh;
+    left: 1.5vh;
+    top: 1.2vh;
+    border-radius: 70%;
+    overflow: hidden;
+    object-fit: cover;
+}
+.pictt img {
+    width: 100%;
+    height: 100%;
+}
+.content_ww{
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 25.4vh;
+    height: 3.2vh;
+    left: 1.5vh;
+    top: 18.4vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.5vh;
+    
+
+color: #000000;
+}
+.nan2{
+    width: 7.8vh;
+    height: 3.3vh;
+    left: 7.9vh;
+    top: 2vh;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1vh;
+    line-height: 1.5vh;
+    color: #000000;
+    margin-left:3vh;
+}
+.pet_pic{
+    width: 25.4vh;
+    height: 9.8vh;
+    left: 1.5vh;
+    top: 7.3vh;
+    margin-top: 2vh;
+    background: #D9D9D9;
+    object-fit: cover;
+}
+.pet_pic img {
+    width: 100%;
+    height: 100%;
+}
+hr{
+    border: 1px solid #9D9FF9;
+}

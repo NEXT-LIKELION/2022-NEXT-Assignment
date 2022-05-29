@@ -1,0 +1,113 @@
+
+.body_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #C0C2FF;
+    text-align: center;
+}
+
+#arrow {
+    box-sizing: border-box;
+    font-size: 25px;
+    color: white;
+    margin-left: -25vw;
+    margin-top: -15vh;
+}
+
+.selection {
+    color: white;
+    align-items: center;
+}
+
+form {
+    margin-top: 5vh;
+
+}
+
+input[type="radio"] {
+    display: none;
+    margin: 10px;
+}
+
+#image {
+    display: none;
+}
+#image_button {
+    background-color: #C0C2FF;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#image_container {
+    width : 20vw;
+    height : 20vw;
+    border-radius: 70% ;
+    overflow: hidden;
+
+}
+
+#image_container img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+input:hover {
+    color: black;
+}
+
+input[type="radio"] + label 
+{cursor : pointer;}
+
+input[type="radio"]:checked + label 
+{outline: 3px solid white;}
+
+h3 {
+    color: white;
+}
+
+
+
+input[type=radio]+label {
+    display:inline-block;
+    margin: 2px;
+
+    color: grey;
+    background-color: white;
+    border: 1px solid;
+    font-size: 18px;
+    text-align: center;
+    width: 10vh;
+    height: 3vh
+}
+p {
+    font-size: 20px;
+    color: white;
+    margin-top: 5vh;
+}
+
+#profile_img {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+}
+
+.input-file{
+    padding: 6px 25px;
+    background-color: white;
+    border-radius: 4px;
+    color: grey;
+    cursor: pointer;
+  }
+
+.file {
+
+}
+
+button {
+
+}
