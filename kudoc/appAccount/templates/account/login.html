@@ -1,0 +1,59 @@
+{% extends 'appAccount/base.html' %}
+
+{% load widget_tweaks %}
+{% block css %}
+
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'appAccount/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'appAccount/login_.css' %}" />
+{% endblock css %}
+
+
+{% block content %}
+
+<section id="login">
+    <form method="post">
+        {% csrf_token %}
+        <!-- {% if error %}
+        <p class="errormessage">{{error}}</p>
+        {% endif %} -->
+        <div class="container">
+            <h3>LOGIN</h3>
+            <br>
+            <!-- <input type="email" name="email" placeholder="이메일을 입력해주세요" autocomplete="email" class="cp-input" required
+                id="id_email"> -->
+            {{form.login|attr:"placeholder=이메일"}}
+            <!-- {{form.email|attr:"class=cp-input"|attr:"placeholder=이메일" }} -->
+            <br>
+            {% comment %} <input type="password" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="password" class="cp-input"
+                required id="id_password1" /> {% endcomment %}
+            {{form.password|attr:"placeholder=비밀번호를 입력해주세요"}}
+            {% comment %} {{form.password|attr: "class=cp-input"|attr:"password=비밀번호" }} {% endcomment %}
+            
+            
+            <br>
+            <br>
+            <button class="loginbutton" type="submit">로그인</button>
+
+            <br>
+            <!-- <button class="loginbutton"> -->
+            <button class="loginbutton"><a class="login22" href="{% url 'account_signup' %}">회원가입</a></button>
+            <!-- </button> -->
+            <br>
+
+           
+            
+            <button class="loginbutton" type="submit">
+                <a class="login22" href="{% url 'account_reset_password'%}">
+                비밀번호 찾기
+                </a>
+            </button>
+        </div>
+
+    </form>
+</section>
+
+{% endblock content %}
+
+{% block button %}
+{% endblock button %}

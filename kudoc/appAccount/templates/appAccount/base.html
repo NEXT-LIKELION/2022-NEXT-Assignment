@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% load static %} {% load socialaccount %} {% providers_media_js %}
+  <link rel="stylesheet" type="text/css" href="{% static 'appMain/base.css' %}">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+  <title>고려대학교 X NEXT-LIKELION</title>
+  {% block css %}
+
+  {% endblock %}
+
+</head>
+
+<body>
+  <nav id="navbar">
+    <div class="navbar__logo">
+      <a href="{% url 'index' %}" class="navbar__logo_1">KU독</a>
+      <a href="{% url 'index' %}" class="navbar__logo_2"> Korea University</a>
+      <a href="{% url 'index' %}" class="navbar__logo_2"> Notice Subscription System</a>
+    </div>
+    <ul class="navbar__menu">
+
+      <li class="navbar__menu__item">
+        <a href="{% url 'index' %}">HOME</a>
+      </li>
+      {% if user.is_authenticated %}
+      <span class="navbar__menu__item">안녕, {{user.username}}</span>
+      <li class="navbar__menu__item">
+        <a href="{% url 'profile' %}">회원정보</a>
+      </li>
+      <li class="navbar__menu__item">
+        <a href="{% url 'account_logout' %}">로그아웃</a>
+      </li>
+      {% else %}
+      <li class="navbar__menu__item">
+        <a href="{% url 'account_login' %}">로그인</a>
+      </li>
+      
+      <li class="navbar__menu__item">
+        <a href="{% url 'account_signup' %}">회원가입</a>
+      </li>
+      {% endif %}
+    </ul>
+  </nav>
+
+  <div class="page-wrapper">
+    <div class="page-container">
+      <header class="page-header">
+        <!-- <h2>POSTS</h2> -->
+      </header>
+      <div class="content-container">
+
+        {% block content %}
+        <!-- 여기엔 흰 페이지 위에 나와야할 것들을 넣으면 됨. -->
+        {% endblock content %}
+
+      </div>
+      {% block button %}
+
+      {% endblock button %}
+    </div>
+  </div>
+
+  <footer>
+
+    <div class="logo">
+      <img src="http://aiku.korea.ac.kr/images/stm/front/layout/emblem_footer_origin.png" class="kulogo" />
+    </div>
+    <div class="logo">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHwAAAAuCAYAAADqWH1CAAAAAXNSR0IArs4c6QAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAfKADAAQAAAABAAAALgAAAADvcWpwAAAIJ0lEQVR4Ae1bS28cRRDecSKyCV4hHhLEENgLCRceSiJIAogFDkjI+QFBSFxCHESCiBKQQEIMJzjEJxIJmzs5cIwvXJBPPGMOucUIISB2uAQJbJGYYA/ft95e15anZ7rnsd4NW1K5u6qrqrv6m+6Znh0HlU7aA3GiU9UhzUAa69CkCyFMRi1me5X+ZchHla4M8S8EfVEGvvbxfRNRMMT82xRUokvV4Lex4PXKYlvpWLl+5t7RlcqmUJsPVSqT1WO/Tgp92pwL09zVMfRfKhFoG9hxHW+CstoF3hLXudZFlWDX9WjHRHS2MqzbkmQb2Ek+3WorE3ACHXYrkbL68QW9l8HmHJUF+E7EDtnBzUCuoPc62MSiDMAJdtJzQF9eA2mg9wPYZQDOex3BrvUbqlEUzaaN2Qa6D9jRjZXUftLGkae9yBXet2BzAre9MTceRCtTaZOpQfcBe6iyHG49cXk6rY8y2wMV3HZE4FU5Dl4A265QruyOYw3kNNLHMvrvT3MqoH0JMT6Ni4PjWYjjGR84E4lHtqGgMrUcBScTDVuNBLt6bC7ugtoOk4MOMWhD2zi6AuX5uAalO+8K+Awck87fIdpTJ0l1TlEDHmPSfZUr6K4jSwDbNQTtJsC2BZWGT7ufze1apXnWfFDIrlVe4UlgL6J9HsyHOU27ofhBKB9DfZ+Q81Z/RoAvfINsPX45BOgVl5WeFrsgsNO6cW6XgO+C1ylnz1VDAn0owYdgHwHbtr1JtMlV/ijkw+Ci6EsE8gacnRcBeq+BzbzyPLQ14B+Ck4hg2+75SX490UbQXR7k4gbbi2BznFkB5/b8flyiQhei3rdgmzyygN6rYDOnLIATbD5A1BjAQuPQT1na+k4dBNEF90FH81uCuWl3++5a+gI+jOFxZSeBTaDPdTeN8nrzOWevjiIYyfKDS3kZdEb2AZxgc2Xz4c5GBDu0Nfab3h/s1Qz1y5leylsCvoCBJd1zT6E9CWz6nvZMjudHSZEUCqivZI2RFWzTX6+C7vrixeRhKwk2n8gXLQbcGeJeGuy12G+oOi/YcvB5PqKQcVC3zSHNuHDGWEkjucLTbG3tBDkE28C2+dn0vHWUzbfaOvcBG0c2vUOtC9trK33zuhH6KQhy0lmbVyW3aT7Zu9ArMDruYpjT5k/4P69j+IDdPHodn5tyeQ27Bnq2z6X0OPPIeVd4iM6T7vvcxrlt18A9Td5gt34IcT2nr4Hu97lU0ZOWB/AQg5kuekAbFS+KgoMufce9VPEBfSm6/yWXfsqyyQo4z9lTZQ2qV+PGgW3G6gq6sd+oMgvgBHp8owa8Uf0mgW3G1A+g+wI+g+RCk+D/pXQB28xFr4PuAzgfzmw/c5p8b7rSB2yTfC+Dro9l8xj0pBm4Kj+DzGOYD9li2WJ8hwbft3W2WEn6f3QjfiDh5z/cwdrEDw6rJ7L9EELQl87uuISHwVo7ICrLyzc6+pBtKfXzaLf5ErcBDWZgMAODGRjMwGAGBjMwmIHBDNwsM6B/HuX/Z78pkuP/UT8n5KzVh+B4FnxbKwDfr5N4zDOfRvMEwKf6WbCkUQhkQ+b/x/nUus0oHct1P5jA7zDYxGSYq+AXWMlJd8D/PfBW8DXwCTDJ/KC0Krn9NeOTvj/CdTzG3TZfTVN9LDugAshvxlWTs6jBlo47IewRCtaZBN/mGRpBxVwgRseyBh6Wioz1/crvgpKziASbF2+95cyL2ZDM1+hcS+mrFytjcD5Pgjk3sSRfvFRhIQPS4ftYL3dlHNhLwn1B1FnlQEMwv5srAkyESST28YiyyJvznYgnwWb466qPMsTtCModwAo2O5Ur/HHIm6gUlOdqryOO3MYZ9m/wW6y0KERJboAlHYTAq/UDqVR17j7cLvMQV7deKXly5srmpNfBhpjz20ZQJVf+JaWjyE/Jki54+s3SsEW0PQ1OBJu2EvADVAji/fsnIftU6zD+BGzu2fRl4sfAFym0iAM/BT7S4pa6WTBpTt68VIr656jrC1Q0N6v/4u83WilknfNVtF0W7T5VvY3TNy5nGZNgj0lFq8689W4rzeg3LhQh6pyvVJKAP62sv1Wyq1iHIcG+SzikJc4tcAbMJOSVXYNsS+RDZQtxHfGiTXrofEp5fK1kV/EeGJ4B14VDWs7C1KnKRRFHJ6FsiIYQdbIhXjic2yaZe/gDkO5u6UxxwVQ8yu2w9QXbhOegDhmhCyVvGberfrLkTLD5r8d1EYsXmt7NRHNh1VFEknM2BZlsJQO43tro4Js8wZ4A+6xs9mOIANC/WxSX81eenRuwmbshgn0UfNEoSiq5ckMRmwtGyqJprWq29CfXVM3aVfz9RemSRAP2iDDy2dIOwY9bUxzNQsmLQdNHUJjx6zYj3zCVmFLnPAebP2LsbKoksDnmoqm9LSMw5/u06ID92eZvXtg1J2wLFLulEvVbwBNKp0UenX4H5wF7GP4huAHWdAUKJtEAxwG+D/oqOI2ebRlEKN9p1fmZ8sOtuik4lrSc34UNF0NRYHPuXgVrol6TBHxENC6iHoJZko6sFu2/nMc2cYXsBRNgSTUI3DKSyEx2CCM5AJ+VTd8GWNM0FCGYSTTAcdSAkiD5kAH8CTgxd0k8UaTlbOaJ92wJygLk18BcaT7EeRvzcYixJcCyXw14hwuTPtCh8Rd2CRfev/hq1vX+xQtL0zgU57SyYDlvzhJs5nwULCe94OFaw4W+/RYBuBlNlsT1JBFsrZuHbsZ0UlD5TEFxsuRcUNfNRTHlGyzwdRjYb+gMyFuObRFIGw62w+4/Xp0loZU5WD4AAAAASUVORK5CYII="
+        class="nllogo" />
+    </div>
+
+
+  </footer>
+
+</body>
+
+</html>

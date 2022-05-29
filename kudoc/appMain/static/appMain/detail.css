@@ -1,0 +1,145 @@
+section#detail {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 15rem;
+  text-align: center;
+}
+
+.comment__list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+p {
+  color: rgba(6, 6, 19, 0.801);
+  font-size: 22px;
+  margin: 0px;
+  font-family: 'Jua', sans-serif;
+}
+
+.btn {
+  background-color: rgba(11, 12, 97, 0.801);
+  width: 100px;
+  height: 23px;
+  padding-top: 5px;
+  padding-bottom:5px;
+  font-size: 17px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  border-radius: 9px;
+  font-family: 'Jua', sans-serif;
+}
+
+.btn:hover {
+  background-color: gray;
+}
+
+
+.content-container {
+  border: solid white;
+  margin: 15px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+input {
+  width: 400px;
+  height: 40px;
+  margin: 10px;
+  font-family: 'Jua', sans-serif;
+  font-size: 15px;
+}
+
+
+.commentbutton {
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  background-color: rgba(11, 12, 97, 0.801);
+  padding-top: 5px;
+  padding-bottom:5px;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  border-radius: 9px;
+  font-family: 'Jua', sans-serif;
+}
+
+.commentbutton2 {
+  margin-left: 10%;
+  color: rgba(11, 12, 97, 0.801);
+  font-family: 'Jua', sans-serif;
+} 
+
+.liner {
+  width: 95%;
+  height: 100px;
+  margin-top: 3%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+label {
+  font-family: 'Jua', sans-serif;
+}
+
+.buttoncenter {
+  margin-top: 20px;
+  width: 400px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.movebutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.write-btn1 {
+  background-color: white;
+  width: 100px;
+  height: 25px;
+  padding-top: 10px;
+  padding-bottom:5px;
+  font-size: 17px;
+  text-decoration: none;
+  color: rgba(11, 12, 97, 0.801);
+  text-align: center;
+  border-radius: 9px;
+  font-family: 'Jua', sans-serif;
+  text-decoration: none;
+}
+.write-btn1:hover {
+  background-color: rgb(138, 185, 216);
+}
+
+.titles {
+  color: rgb(10, 57, 88);
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.list {
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.commentbox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

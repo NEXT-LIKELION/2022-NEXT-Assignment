@@ -1,0 +1,165 @@
+{% extends 'appMain/base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'appMain/home.css' %}" />
+{% endblock css %}
+
+
+{% block content %}
+
+
+<h1>공지사항</h1>
+<div class="convert_to_row">
+    <div class="notice_submenu">
+        <div class="brown_shade active" data-target="daily">
+            <a href="#" class="submenu">학사일정</a>
+        </div>
+        
+        <div class="brown_shade" data-target="event">
+            <a href="#" class="submenu">교내외 행사</a>
+        </div>
+        <div class="brown_shade" data-target="tuition">
+            <a href="#" class="submenu">장학금</a>
+        </div>
+     
+        
+        <div class="brown_shade" data-target="department">
+            <a href="#" class="submenu">학과</a>
+        </div>
+        <div class="brown_shade">
+            <a href="#" class="submenu" data-target="exchange">교환학생</a>
+        </div> 
+        <div class="brown_shade">
+            <a href="#" class="submenu" data-target="gopas">고파스에브리타임</a>
+        </div>
+        <div class="brown_shade">
+            <a href="#" class="submenu" data-target="rule">일반 공지사항</a>
+        </div> 
+        <div class="ads">
+            <div>
+                <img src="https://ssl.pstatic.net/tveta/libs/1394/1394239/91595f2ce837bd098371_20220524165316965.jpg"
+                    class="adimage" />
+            </div>
+            <div>
+                <img src="
+                    https://ssl.pstatic.net/tveta/libs/1389/1389869/d7dcffbdd27d7e068aae_20220429151510002.jpg"
+                    class="adimage" />
+            </div>
+        </div>
+    </div>
+
+    <div>
+    <div class="notice_in_main daily">
+
+        {% for schedule_notice in schedule_notices %}
+        <div>
+            <div class="notice_header">
+                <a href="{{schedule_notice.link}}"
+                    class="notice_title">{{schedule_notice.title}}</a>
+                <!-- {{notice.category}} -->
+                <p>{{schedule_notice.post_date}}</p>
+            </div>
+            {% comment %} <div class="notice_content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam saepe eligendi
+                dignissimos
+                adipisci
+                ipsum
+                est
+                ad neque, minus aliquid et alias quo aut, esse ex itaque sint, voluptate cupiditate libero?
+                2018.12.12
+            </div> {% endcomment %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="notice_in_main event">
+
+        {% for general_notice in general_notices %}
+        <div>
+            <div class="notice_header">
+                <a href="{{general_notice.link}}"
+                    class="notice_title">{{general_notice.title}}</a>
+                <!-- {{notice.category}} -->
+                <p>{{general_notice.post_date}}</p>
+            </div>
+            {% comment %} <div class="notice_content">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam saepe eligendi
+                dignissimos
+                adipisci
+                ipsum
+                est
+                ad neque, minus aliquid et alias quo aut, esse ex itaque sint, voluptate cupiditate libero?
+                2018.12.12
+            </div> {% endcomment %}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="notice_in_main tuition">
+
+        {% for scholar_notice in scholar_notices %}
+        <div>
+            <div class="notice_header">
+                <a href="{{scholar_notice.link}}"
+                    class="notice_title">{{scholar_notice.title}}</a>
+                <!-- {{scholar_notice.category}} -->
+                <p>{{scholar_notice.post_date}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="notice_in_main department">
+
+        {% for depart_notice in depart_notices %}
+        <div>
+            <div class="notice_header">
+                <a href="{{depart_notice.link}}"
+                    class="notice_title">{{depart_notice.title}}</a>
+                <!-- {{scholar_notice.category}} -->
+                <p>{{depart_notice.post_date}}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+<script>
+
+/* .menu-item 클릭시 해당 페이지 보여주기  */
+function showContents(target) {
+    let tarData = $(target).data('target');
+    $('.' + tarData).fadeIn();
+    $('.' + tarData).siblings().css({"display":"none"});
+    $(document).find('.brown_shade').removeClass('active');
+    $(target).addClass('active');
+}
+
+
+
+$(document).on('click', '.brown_shade', function() {
+    showContents(this);
+});
+
+
+
+{% comment %} $(document).on("click","#test-element",function() {
+    alert("click");
+}); {% endcomment %}
+
+
+
+
+</script>
+
+{% endblock content %}
+
+
+
+
+{% block button %}
+
+<div>
+
+</div>
+
+{% endblock button %}

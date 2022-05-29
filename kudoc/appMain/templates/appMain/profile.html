@@ -1,0 +1,94 @@
+{% extends 'appMain/base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'appMain/profile_.css' %}" />
+{% endblock css %}
+
+
+{% block content %}
+
+<div class="big_container">
+    <br>
+    <div class="page_title">
+        <h1>회원 정보</h1>
+    </div>
+
+
+    {% if user.is_authenticated %}
+    <div class="container">
+
+        <div class="page_title2">
+            <h2>기본 정보</h2>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">유저 이름</div>
+            <p class="content_in_menu">{{user.nickname}}</p>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">유저 이메일</div>
+            <p class="content_in_menu">{{user.email}}</p>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">전화번호</div>
+            <p class="content_in_menu">{{user.phone_number}}</p>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="page_title2">
+            <h2>선택 정보</h2>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">이메일 전송기간</div>
+            <p class="content_in_menu">{{user.email_period}}일</p>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">관심사</div>
+            <p class="content_in_menu">{{user.category}}</p>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">구독 여부</div>
+            <div>
+                {% if user.is_active %}
+                <p class="content_in_menu">구독 중</p>
+                {% else %}
+                <p class="content_in_menu">구독 취소</p>
+                {% endif %}
+            </div>
+        </div>
+        <div class="menu_column">
+            <div class="menu_column_name">회원 종류</div>
+            <div>
+                {% if user.is_premier %}
+                <p class="content_in_menu">유료 회원</p>
+                {% else %}
+                <p class="content_in_menu">무료 회원</p>
+                {% endif %}
+                {% else %}
+                <p class="content_in_menu">로그인이 필요합니다.</p>
+                {% endif %}
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="button_container">
+            <a href="{% url 'profileEdit' %}" class="button_link">프로필 편집</a>
+            <a href="{% url 'sendCategoryMail' %}" class="button_link">구독정보 받기</a>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock content %}
+
+
+{% block button %}
+
+<div>
+
+</div>
+
+{% endblock button %}

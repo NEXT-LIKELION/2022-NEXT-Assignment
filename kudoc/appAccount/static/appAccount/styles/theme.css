@@ -1,0 +1,339 @@
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+* {
+  font-family: "Spoqa Han Sans Neo", sans-serif;
+}
+
+:root {
+  --text: #2f2c28;
+  --link: #ffcc00;
+  --button-text: #fff;
+  --button-primary-background: #ffcc00;
+  --button-primary-hover-background: #ffe680;
+  --button-warn-background: #f9592c;
+  --button-secondary-background: #bcb9b0;
+  --ic-button-circle: #ffcc00;
+  --input-background: #fff;
+  --input-border: #cccac3;
+  --input-placeholder: #bcb9b0;
+  --input-focus-border: #ffcc00;
+  --input-focus-background: #fffdf3;
+  --input-error: #e6584e;
+  --input-error-border: #e6584e;
+  --chip-border: #e3e1dc;
+  --chip-text: #2f2c28;
+  --chip-green-background: #effaf9;
+  --chip-green-text: #79c9c5;
+  --chip-green-border: #06aea7;
+  --avatar-placeholder: #e3e1dc;
+  --stars: #ffcc00;
+  --dialog-border: #e3e1dc;
+  --dialog-background: #f6f5f3;
+  --dialog-info: #e1811b;
+  --box-border: #e3e1dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Texts */
+
+body,
+a,
+a:hover {
+  color: var(--text);
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+.cp-link {
+  color: var(--link);
+  font-weight: 500;
+}
+
+/* Button */
+
+a.cp-button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.cp-button {
+  border: none;
+  outline: none;
+  padding: 14px 28px;
+  border-radius: 9999px;
+  font-size: 19px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+  cursor: pointer;
+  background-color: var(--button-primary-background);
+  color: var(--button-text);
+}
+
+.cp-button:hover,
+.cp-button:active {
+  color: var(--button-text);
+  background-color: var(--button-primary-hover-background);
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.cp-button.secondary {
+  background-color: var(--button-secondary-background);
+}
+
+.cp-button.warn {
+  background-color: var(--button-warn-background);
+}
+
+.cp-button.secondary:hover,
+.cp-button.secondary:active,
+.cp-button.warn:hover,
+.cp-button.warn:active {
+  opacity: 0.6;
+}
+
+.cp-button.inverted {
+  padding: 5px 17px;
+  font-size: 17px;
+  font-weight: 300;
+  background-color: transparent;
+  color: #e1811b;
+  border: 1px solid #e1811b;
+}
+
+/* Icon Button */
+
+.cp-ic-button {
+  display: inline-flex;
+  outline: none;
+  border: none;
+  background: none;
+  align-items: center;
+}
+
+.cp-ic-button:hover,
+.cp-ic-button:active {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cp-ic-button:not(.after)::before {
+  content: " ";
+  margin-right: 7px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+}
+
+.cp-ic-button.setting::before {
+  background-image: url("../icons/ic-setting.svg");
+}
+
+.cp-ic-button.newreview::before {
+  background-image: url("../icons/ic-newreview.svg");
+}
+
+.cp-ic-button.backbutton::before {
+  background-image: url("../icons/ic-morereview.svg");
+  transform: scaleX(-1);
+}
+
+.cp-ic-button.after::after {
+  content: " ";
+  margin-left: 7px;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-position: center;
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+}
+
+.cp-ic-button.after.morereview::after {
+  background-image: url("../icons/ic-morereview.svg");
+}
+
+
+.cp-ic-button.circle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cp-ic-button.circle::before,
+.cp-ic-button.circle::after {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: var(--ic-button-circle);
+}
+
+/* Input */
+
+div.cp-input {
+  display: inline-block;
+  position: relative;
+}
+
+input.cp-input,
+textarea.cp-input,
+.cp-input input {
+  width: 100%;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+  padding: 16px 24px;
+  border: 1px solid var(--input-border);
+  background-color: var(--input-background);
+  outline: none;
+  border-radius: 7px;
+}
+
+input.cp-input:focus,
+textarea.cp-input:focus,
+.cp-input input:focus {
+  background-color: var(--input-focus-background);
+  border-color: var(--input-focus-border);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+input.cp-input:placeholder,
+textarea.cp-input:placholder,
+.cp-input input:placeholder {
+  color: var(--input-placeholder);
+}
+
+textarea.cp-input {
+  line-height: 1.82;
+}
+
+.cp-input.error {
+  padding-right: 46px;
+  border: 1px solid var(--input-error-border);
+  background-position: top 13px right 13px;
+  background-image: url("../icons/ic-error.svg");
+  background-size: 29px;
+  background-repeat: no-repeat;
+}
+
+.error-message {
+  color: var(--input-error);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.cp-input:not(.error) ~ .error-message {
+  display: none;
+}
+
+.cp-input.error ~ .error-message {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+
+/* Star rating */
+
+.cp-stars {
+  color: var(--stars);
+  font-size: 21px;
+  line-height: 21px;
+}
+
+/* Chip */
+
+.cp-chip {
+  display: inline-block;
+  padding: 0 17px;
+  font-size: 15px;
+  line-height: 32px;
+  color: var(--chip-text);
+  border: 1px solid var(--chip-border);
+  border-radius: 9999px;
+}
+
+.cp-chip.green {
+  padding: 0 13px;
+  line-height: 27px;
+  color: var(--chip-green-text);
+  background-color: var(--chip-green-background);
+  border-color: var(--chip-green-border);
+}
+
+/* Avatar */
+
+.cp-avatar {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--avatar-placeholder);
+  background-size: cover;
+  background-position: center;
+}
+
+.cp-avatar.large {
+  width: 100px;
+  height: 100px;
+}
+
+/* Card */
+
+.cp-card {
+  border-radius: 21px;
+  box-shadow: 0 3px 16px 0 #f1ece2;
+  background-color: #ffffff;
+  will-change: box-shadow;
+}
+
+/* Dialog */
+
+.cp-dialog {
+  padding: 21px 55px 21px 40px;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: -0.35px;
+  border-radius: 6px;
+  border: solid 1px var(--dialog-border);
+  background-color: var(--dialog-background);
+}
+
+.cp-dialog.info {
+  color: var(--dialog-info);
+  border-color: transparent;
+  background-color: transparent;
+}
+
+/* Box */
+
+.cp-box {
+  padding: 68px 145px;
+  border-radius: 6px;
+  border: solid 2px var(--box-border);
+}
+
+/* Icon */
+
+.cp-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cp-icon.small {
+  width: 18px;
+  height: 18px;
+}

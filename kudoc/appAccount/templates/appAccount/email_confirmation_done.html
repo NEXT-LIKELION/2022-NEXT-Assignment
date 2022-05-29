@@ -1,0 +1,7 @@
+이메일 인증이 완료되었습니다. 
+{% if user.is_authenticated %}
+<a href="{% url 'index' %}">홈으로 이동</a>
+{% else %}
+<a href="{% url 'account_login' %}">로그인 하기</a>
+{% endif %}
+

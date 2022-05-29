@@ -1,0 +1,89 @@
+{% extends 'appAccount/base.html' %}
+
+{% load widget_tweaks %}
+{% block css %}
+
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'appAccount/base.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'appAccount/signup.css' %}" />
+{% endblock css %}
+
+
+{% block content %}
+
+<section id="login">
+    <form method="post">
+        {% csrf_token %}
+        <!-- {% if error %}
+        <p class="errormessage">{{error}}</p>
+        {% endif %} -->
+        <div class="container">
+            <h3>SIGN UP</h3>
+            <br>
+            {{form.email|attr:"placeholder=이메일"|add_error_class:"error"}}
+            {% for error in form.email.errors %}
+                <div class="error-message">{{error}}</div>
+            {% endfor %}
+            <br>
+            {{form.nickname|attr:"placeholder=닉네임"|add_error_class:"error"}}
+            {% for error in form.nickname.errors %}
+                <div class="error-message">{{error}}</div>
+            {% endfor %}
+            <br>
+            {{form.department|attr:"placeholder=학과"}}
+            <br>
+            {{ form.phone_number|attr:"placeholder=+8210XXXXXXXX"|add_error_class:"error"}}
+            {% for error in form.phone_number.errors %}
+                <div class="error-message">{{error}}</div>
+            {% endfor %}
+            <br>
+            <div class="period-box">
+              <div class="text-box">이메일 전송 기간 설정</div>
+              {{ form.email_period|attr:"class=select-box"|add_error_class:"error"}}  
+              {% for error in form.email_period.errors %}
+                <div class="error-message">{{error}}</div>
+            {% endfor %}
+            </div>
+            <br>
+            <div class="period-box">
+                <div class="text-box">관심 분야 설정</div>
+                {{ form.category|attr:"class=select-box"|add_error_class:"error"}}
+                {% for error in form.category.errors %}
+                    <div class="error-message">{{error}}</div>
+                {% endfor %}
+              </div>
+            <br>
+            {{ form.password1|add_error_class:"error"}}
+            {% for error in form.password1.errors %}
+                <div class="error-message">{{error}}</div>
+            {% endfor %}
+            <br>
+            {{ form.password2|add_error_class:"error"}}
+            {% for error in form.password2.errors %}
+                <div class="error-message">{{error}}</div>
+            {% endfor %}
+            <br>
+            
+            <!-- <input type="email" name="email" placeholder="이메일을 입력해주세요" autocomplete="email" class="cp-input" required
+                id="id_email"> -->
+            
+            <!-- {{form.email|attr:"class=cp-input"|attr:"placeholder=이메일" }} -->
+            <br>
+            {% comment %} <input type="password" name="password" placeholder="비밀번호를 입력해주세요" autocomplete="password" class="cp-input"
+                required id="id_password1" /> {% endcomment %}
+            {% comment %} {{form.password|attr: "class=cp-input"|attr:"password=비밀번호" }} {% endcomment %}
+            <br>
+            <!-- <button class="loginbutton"> -->
+            <button class="loginbutton" type="submit"><span class="login22">회원가입</span></button>
+            <!-- </button> -->
+            <br>
+        </div>
+
+    </form>
+</section>
+
+{% endblock content %}
+
+{% block button %}
+{% endblock button %}
+

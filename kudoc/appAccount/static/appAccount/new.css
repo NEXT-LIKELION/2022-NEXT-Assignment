@@ -1,0 +1,105 @@
+
+
+.btn {
+    color: #872029;;
+    width: 100px;
+    height: 23px;
+    padding-top: 5px;
+    padding-bottom:5px;
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    border-radius: 9px;
+    font-family: 'Jua', sans-serif;
+  }
+  
+  .btn:hover {
+    background-color: gray;
+  }
+  
+  
+  .content-container {
+    border: solid white;
+    margin: 15px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  input {
+    width: 500px;
+    height: 40px;
+    margin: 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 15px;
+  }
+  
+  textarea {
+    width: 500px;
+    height: 200px;
+    color: black;
+    margin: 10px;
+    font-family: 'Jua', sans-serif;
+    font-size: 15px;
+  }
+  
+  button {
+    width: 100px;
+    height: 35px;
+    margin: 10px;
+    color: #872029;
+    padding-top: 5px;
+    padding-bottom:5px;
+    font-size: 17px;
+    color: white;
+    text-align: center;
+    border-radius: 9px;
+    font-family: 'Jua', sans-serif;
+  }
+  
+  .liner {
+    width: 80%;
+    height: 100px;
+    margin-top: 3%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  label {
+    font-family: 'Jua', sans-serif;
+  }
+  
+  .buttoncenter {
+    margin-top: 20px;
+    width: 80%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .movebutton {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  
+  .write-btn1 {
+    background-color: white;
+    width: 100px;
+    height: 25px;
+    padding-top: 10px;
+    padding-bottom:5px;
+    font-size: 17px;
+    text-decoration: none;
+    color: #872029;;
+    text-align: center;
+    border-radius: 9px;
+    font-family: 'Jua', sans-serif;
+  }
+  .write-btn1:hover {
+    background-color: rgb(216, 138, 138);
+  }

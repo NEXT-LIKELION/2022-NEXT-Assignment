@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+django-allauth = "*"
+django-phonenumber-field = "*"
+django-phonenumbers = "*"
+django-phone-verify = "==0.1.1"
+django-widget-tweaks = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
