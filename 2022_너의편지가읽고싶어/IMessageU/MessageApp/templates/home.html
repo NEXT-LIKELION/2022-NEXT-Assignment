@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="../static/css/home.css">
+  
+</head>
+
+<body> 
+  <main>
+    <div class="site-section">
+            <div class = "all">
+                <div class="container" style="max-width: 600px;">
+                    <div>
+                        <img src="https://github.com/jisoolee0929/LikeLion_Hackathon5/blob/main/homeimg3.png?raw=true" alt="로고 이미지 들어갈 자리">
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div>
+                        <a href="{% url 'my_page' user.pk  %}" style=" text-decoration: none;">내 편지함 바로가기</a>
+                    </div>
+                    {% endif %}
+                    {% if user.is_anonymous %}
+                    <div class = "buttonbar" style="display: flex; flex-direction: column;">
+                        <a href="{% url 'login' %}" style=" text-decoration: none;">내 편지함 들어가기</a>
+                        <a href="{% url 'signup' %}"style=" text-decoration: none;" >내 편지함 만들기</a>
+                    </div>
+                    {% endif %}
+                    
+                </div>
+            </div>
+    </div>  
+  </main> 
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/sidebar.css' %}">
+{% endblock css %}
+
+<aside class="sidebar">
+  <div class="toggle">
+    <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+      <span></span>
+    </a>
+  </div>
+
+  <div class="side-inner">
+    {% if user.is_authenticated and isHost == True %}
+    <div class="profile">
+      <img src="https://doitdjango.com/avatar/id/932/b7bd38bb3a755a8f/svg/{{ user.email }" alt="캐릭터 프로필 사진" class="img-fluid">
+      <h3 class="name">{{ user.nickname }}</h3>
+      <span class="country">대한민국</span>
+    </div>
+
+    <div class="counter d-flex justify-content-center">
+      <!-- <div class="row justify-content-center"> -->
+        <div class="col">
+          <strong class="number">{{ len_message }}개</strong>
+          <span class="number-label">받은 편지수</span>
+        </div>
+        <div class="col">
+          <strong class="number">{{ user.total_time }}초</strong>
+          <span class="number-label">총 공부시간</span>
+        </div>
+        
+      <!-- </div> -->
+    </div>
+
+    {% else %} 
+    <div class="profile">
+      <img src="https://doitdjango.com/avatar/id/932/b7bd38bb3a755a8f/svg/{{ user.email }" alt="캐릭터 프로필 사진" class="img-fluid">
+      <h3 class="name">{{ user.email }}</h3>
+      <span class="country">대한민국</span>
+    </div>
+    {% endif %}
+    
+    <div class="nav-menu">
+      <ul>
+        {% if user.is_authenticated %}
+        <li><a href="#"><i class="fa-solid fa-bell"></i>&nbsp;공지사항</a></li>
+        <li><a href="https://autrevie.notion.site/6f4169a63454461a80fd9a4d33cde73d"><i class="fa-solid fa-people-group"></i>&nbsp;개발진 스토리</a></li>
+        <li><a href="{% url 'my_page' user.pk %}"><i class="fa-solid fa-mailbox"></i>&nbsp;내 편지함</a></li>
+        <li><a href="{% url 'logout' %}"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;로그아웃</a></li>
+        {% else %} 
+        <li class="active"><a href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;로그인</a></li>
+        <li><a href="{% url 'signup' %}"><i class="fa-solid fa-user-plus"></i>&nbsp;회원가입</a></li>
+        <li><a href="#"><i class="fa-solid fa-bell"></i>&nbsp;공지사항</a></li>
+        <li><a href="https://autrevie.notion.site/6f4169a63454461a80fd9a4d33cde73d"><i class="fa-solid fa-people-group"></i>&nbsp;개발진 스토리</a></li>
+        <li><a href="#"><i class="fa-solid fa-question"></i>&nbsp;문의하기</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</aside>

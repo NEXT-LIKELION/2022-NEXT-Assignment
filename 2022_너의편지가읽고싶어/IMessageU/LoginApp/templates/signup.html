@@ -1,0 +1,51 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+
+<div class="modal modal-signup position-static d-block bg-light py-5" tabindex="-1" role="dialog" id="modalSignup">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <!-- <h5 class="modal-title">Modal title</h5> -->
+        <h2 class="fw-bold mb-0">회원가입</h2>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+      </div>
+
+      <div class="modal-body p-5 pt-0">
+        <form class="signup" method="POST">
+          {% csrf_token %}
+          {% if error %}
+          <p>{{ error }}</p> 
+          {% endif %} 
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-3" id="floatingInput" name="email" placeholder="name@example.com">
+            <label for="floatingInput">이메일</label>
+            <small class="text-muted">name@example.com의 형태로 이메일을 입력해주세요.</small>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="nickname" class="form-control rounded-3" id="floatingInput" name="nickname" placeholder="Nickname">
+            <label for="floatingInput">닉네임</label>
+            <small class="text-muted">닉네임을 입력해주세요.</small>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-3" id="floatingPassword" name="password" placeholder="Password">
+            <label for="floatingPassword">비밀번호</label>
+            <small class="text-muted">8~16자 영문, 숫자 및 특수문자를 이용한 비밀번호를 입력해주세요.</small>
+          </div>
+          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">가입하기</button>
+          <small class="text-muted"></small>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!--부트스트랩-->
+  <script src="{% static 'js/bootstarp.min.js' %}"></script>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/sidebar.js' %}"></script>
+  
+  <!--아이콘-->
+  <script src="https://kit.fontawesome.com/53bee35fbd.js" crossorigin="anonymous"></script>

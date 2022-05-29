@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% block title %}{% endblock title %} 
+  {% block css %}
+  <link href="{% static 'css/message_detail.css' %}" rel="stylesheet">
+  {% endblock %}
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}"> -->
+</head>
+
+<body> 
+  <main>
+    <div class="site-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="position-static d-block bg-light py-5" role="dialog">
+            <div class="card-dialog" role="document">
+              <div class="redirect_home">
+                <a class="btn" href="{% url 'my_page' user.pk %}">메인페이지로</a>
+              </div>
+              <br>
+              <div class="card-content rounded-4 shadow" id="cover">
+                <div class="card-header p-5 pb-4 border-bottom-0">
+                  <h2 class="fw-bold mb-0">{{ messages.title }}</h2>
+                  <small>From: {{ messages.nickname }}</small>
+                </div>
+                <div class="card-body p-5 pt-0">
+                  <p style="color: black;">{{ messages.content }}</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>  
+  </main> 
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+  <!-- <script src="{% static 'js/bootstarp.min.js' %}"></script> -->
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <!-- <script src="{% static 'js/popper.min.js' %}"></script> -->
+  <script src="{% static 'js/sidebar.js' %}"></script>
+  
+  <!--아이콘-->
+  <script src="https://kit.fontawesome.com/53bee35fbd.js" crossorigin="anonymous"></script>
+</body>
+</html>
