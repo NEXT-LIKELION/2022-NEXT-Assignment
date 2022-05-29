@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'addevent_complete.css' %}">
+    <title>AddEventComplete</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="text">
+            <p>일정이 생성됐어요!</p>
+        </div>
+        <div class="image">
+            <img src="https://blogfiles.pstatic.net/MjAyMjA1MjlfNzIg/MDAxNjUzNzU0MzA4MzE2.9HPg1oZp8IFJcRjQst1U8I0lZlaD5aowh1Fa_c8AvBQg.MNNQXTtrsDDf7Fs7YTdp-GHWKJNbUPssOOoi5_k8THMg.PNG.skycolor10/Group_42.png?type=w1" alt="달력그림">
+        </div>
+        <div class="checkbutton">
+            <button>
+                <a href="{% url 'home' %}">확인</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

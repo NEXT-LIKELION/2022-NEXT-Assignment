@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+새 저금통
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'pig_new.css' %}">
+{% endblock css %}
+
+{% block wrapper %}
+<div  class="navbar">
+  <a href="{% url 'home' %}">
+      <img class="logout" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMTYy/MDAxNjUzNzU1NzY5OTU3.UCByLRd7XpAWlFO8M2Zf_1wH7sXVcnH3gfikPNiMERIg.AqY3eGPg8XKE4aeb2eUZLurEjCM8_RqZPIj1_57xcYcg.PNG.skycolor10/Arrow_2.png?type=w1">
+  </a>
+  <p>저금통 만들기</p>
+  <div>
+
+  </div>
+  <!-- <a href="{% url 'pig_new' %}">
+      <img class="plus" src="https://blogfiles.pstatic.net/MjAyMjA1MjhfMTc2/MDAxNjUzNzM2MDE0NjUw.ngd1xIhmuZH8Oxheqwq9Jos_FXSG9AJBBx7fMlgH9sAg.O_imRCqvbho-_iy7KnMLMz6AALim56ZPtON_EukIHKUg.PNG.skycolor10/Group_1.png?type=w1">
+  </a> -->
+</div>
+<div class="user-data hidden">
+  {% for profile in profiles %}
+  {{profile.user.pk}}:{{profile.nickname}}&
+  {% endfor %}
+</div>
+
+<form method="POST" data-form-id="1">
+  {% csrf_token %}
+  <div class="inputContainer">
+    <!-- <span>모임 명</span> -->
+    <input name="pig_name" type="text" placeholder="저금통 이름" required/>
+    <br/>
+    <!-- <span>모임 설명</span> -->
+    <input name="pig_description" type="text" placeholder="저금통 설명" required/>
+    <br/>
+    <input class="search-bar" placeholder="저금통 멤버 추가"/>
+    <div class="user-found-container"></div>
+    <div class="user-added-container">
+    </div>
+  </div>
+  <!-- <div style="margin-top: 20px;" class="inputContainer">
+    <span>지각하면... 얼마?</span>
+    <input name="exchange_rate" type="text" placeholder="지각하면 얼마" required/>  
+
+  </div> -->
+</form>
+
+<div style="margin-top: 20px;"class="select-money inputContainer2">
+  <span>저금 단위</span>
+  <div class="elementWrapper">
+    <span class="time">
+      1분당
+    </span>
+    <div class="plusWrapper">
+      <button class="button-plus button">+</button>
+      <div class="money-field">500</div>
+      <button class="button-minus button">-</button>
+    </div>
+  </div>
+
+
+</div>
+
+<!--
+<span>모임 명</span>
+<input name="pig_name" type="text" placeholder="돼지 이름">
+<br/>
+<span>모임 설명</span>
+<input name="pig_description" type="text" placeholder="돼지 설명">
+<br/>
+<span>지각하면... 얼마?</span>
+<input name="exchange_rate" type="text" placeholder="지각하면 얼마">
+-->
+<button type="submit" class="submit" data-form-id="1"><a href="{% url 'addpig_complete' %}"><span style="color:white;">만들기</span></a></button>
+
+{% endblock wrapper %}
+
+
+{% block script %}
+<script src="{% static 'pig_new.js' %}"></script>
+{% endblock script %}

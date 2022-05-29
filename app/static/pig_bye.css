@@ -1,0 +1,102 @@
+/* 메인 페이지 관련 */
+
+.body {
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+}
+
+/* 헤더 부분 관련 */
+
+.head {
+    width: 100%;
+    height: 102px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    height: 102px;
+    width: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.title_back {
+    height: 102px;
+    width: 125px;
+    display: flex;
+    align-items: center;
+}
+
+.title_letter {
+    font-family: 'NanumGothic' ;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: #000000;
+}
+
+.back {
+    width: 17px;
+    height: 17px;
+    margin-left: 15px;   
+}
+
+/* 돼지 관련 */
+
+.pig {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pig_text {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 36px;
+    width: 74px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    position: absolute;
+
+}
+
+.mainpig {
+    width: 265px;
+    height: 246px;
+}
+
+/* 버튼 관련 */
+
+.buttonBox {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button {
+    width: 105px;
+    height: 36px;
+    background-color: #4880EE;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'NanumGothic';
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+}

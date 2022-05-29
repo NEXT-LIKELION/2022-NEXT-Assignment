@@ -1,0 +1,38 @@
+div.wrapper{
+    min-height:100vh;
+    max-width:375px;
+    width:100%;
+    margin:0 auto;
+    border:1px solid transparent;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    /* justify-content: center; */
+}
+
+p{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;  
+}
+
+img{
+    height:200px;
+}
+
+button{
+    margin-top:100px;
+    background: #4880EE;
+    border-radius:10px;
+    width:100px;
+    height:30px;
+    color:white;
+    border:transparent;
+}
+
+a{
+    color:white;
+    text-decoration: none;
+}

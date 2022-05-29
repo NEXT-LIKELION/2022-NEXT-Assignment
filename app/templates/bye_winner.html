@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'pig_donate.css' %}">
+{% endblock css %}
+
+{% block title %}pig_winner{% endblock title %}
+
+{% block wrapper %}
+<div class="body">
+    <div class="content">
+       <span class="text">저금통을 깨고<br>
+        1등에게<br>
+        모인 금액을 보낼까요?</span>
+    </div>
+    <div class="buttonBox">
+        <div class="button_left button">
+            <a href="{% url 'bye_winner_complete' %}"><span>확인</span></a>
+        </div>
+        <div class="button_right button">
+            <a href="{% url 'home' %}"><span>취소</span></a>
+        </div>
+    </div>
+</div>
+{% endblock wrapper %}
+{% block script %}
+{% endblock script %}
+
+

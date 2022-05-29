@@ -1,0 +1,35 @@
+/* 메인 페이지 관련 */
+
+.body {
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+}
+
+.content {
+    height: 102px;
+    width: 125px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.button_left {
+    width: 106px;
+    height: 47px;
+    background-color: #4880EE;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_right {
+    width: 106px;
+    height: 47px;
+    background-color: #F2F3F4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

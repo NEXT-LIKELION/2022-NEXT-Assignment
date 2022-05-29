@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'bye_donate_complete.css' %}">
+{% endblock css %}
+
+{% block wrapper %}
+<div class="body">
+    <box>hi</box>
+    <br>
+    <span class="bold">굿네이버스<span><span class="light">에게<span><br><span>전액</span><span class="light">을 기부했어요</span>
+    <br>
+    <img class="drop" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfOTgg/MDAxNjUzNzU4NTQ5MTQ1.d9KNz62kEgCFRCbMUzoYTrHaCz1C6F1IPeoAl_JxU0og.0pxvMhAHMeLagWeE0WEtNGQJjMbi1JoxJOxl-Htkz4kg.PNG.skycolor10/%EB%AC%BC%EB%B0%A9%EC%9A%B8.png?type=w1">
+    <br>
+    <img class="sae" src=https://blogfiles.pstatic.net/MjAyMjA1MjlfMjYz/MDAxNjUzNzY3NTIzNTY2.l9OBBGrXoPPFSJt-zi4Y8e11s0FRuu47-s2BFsXB1uog.97TlcHxwYNC3wZWCaQGIx3hH5a60LJcFNPFrd8WdlyYg.PNG.skycolor10/Group_64.png">
+    <div class="button">
+        <a href="{% url 'home' %}">확인</a>
+    </div>
+</div>
+    {% endblock wrapper %}
+    {% block script %}
+    <script src="{% static 'arrive.css' %}"></script>
+    {% endblock script %}

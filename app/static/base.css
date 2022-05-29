@@ -1,0 +1,28 @@
+/* div.wrapper{
+    min-height:812px;
+    max-width:375px;
+    margin:0 auto;
+    border:1px solid white;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+} */
+body {
+    font-family: 'NanumGothic'; 
+}
+
+div.wrapper{
+    position: absolute;
+    min-height:100vh;
+    max-width:375px;
+    width:100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    /* border:1px solid gray; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    /* justify-content:center; */
+}

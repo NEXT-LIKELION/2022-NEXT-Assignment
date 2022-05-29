@@ -1,0 +1,59 @@
+body{
+    background: #4880EE;
+}
+a {
+    text-decoration: none;
+    font-family: 'NanumGothic';
+    font-style: normal;
+}
+div.wrapper{
+    height:812px;
+    width:375px;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+} 
+
+div.pigntxt{
+    width:400px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+}
+
+div.pigfig{
+    width:108px;
+    height:89.48px;
+}
+
+.pig{
+    width:108px;
+    height:89.48px;
+}
+
+div.text{
+    width: 113px;
+    height: 24px;
+    left: 132px;
+    top: 406px;
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    /* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h1 {
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-size: 20px;
+    padding-top: 200px;
+    font-weight: 100;
+    color: aliceblue;
+}

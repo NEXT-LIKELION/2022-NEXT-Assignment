@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block css %}
+<link rel="stylesheet "href="{% static 'schedule_new.css' %}">
+<script>
+    (function(d) {
+      var config = {
+        kitId: 'csk2aof',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
+{% endblock css %}
+
+{% block title %}
+New Schedule
+{% endblock title %}
+
+{% block wrapper %}
+<div  class="navbar">
+    <a href="{% url 'home' %}">
+        <img class="goback" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMTYy/MDAxNjUzNzU1NzY5OTU3.UCByLRd7XpAWlFO8M2Zf_1wH7sXVcnH3gfikPNiMERIg.AqY3eGPg8XKE4aeb2eUZLurEjCM8_RqZPIj1_57xcYcg.PNG.skycolor10/Arrow_2.png?type=w1">
+    </a>
+    <p>시간저금통</p>
+    <a href="{% url 'home' %}">
+        <img class="plus" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMjI2/MDAxNjUzNzU3NDExMTkz.GHCdLmjdL00wrmwCKdzE-bxf2dAC4ukNMShs3tJa_bsg.0CxAYd58X9UteroRYQXOhUlSQ31KmOei6hTR8dcnmagg.PNG.skycolor10/Group_63_%281%29.png?type=w1">
+    </a> 
+</div>
+    <h1>일정 추가</h1>
+    <form action="{% url 'schedule_new' pig_pk %}" method="POST" data-form-id="1"> 
+        {% csrf_token %}
+        <div class="contents">
+            <div class="schedule_info">
+                <input type="text" name="schedule_name" placeholder="  일정 이름" required >
+                <input type="text" name="schedule_description" placeholder="  일정 설명" required >
+                <input type="text" name="where_to_meet" placeholder="  만날 장소" required >
+                <input type="text" name="when_to_meet" placeholder="  YYYY-MM-DD HH:MM" required >
+            </div>
+            <div class="submitbutton">
+                <button type="submit" data-form-id="1">일정 만들기</button>
+            </div>
+        </div>
+    </form>
+{% endblock wrapper %}

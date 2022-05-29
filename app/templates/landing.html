@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'landing.css' %}">
+{% endblock css %}
+
+{% block title %}Landing{% endblock title %}
+
+{% block wrapper %}
+<div class="wrapper">
+    <div class="pigntxt">
+        <div class="pigfig"><img class="pig" src="https://blogfiles.pstatic.net/MjAyMjA1MjhfOTgg/MDAxNjUzNzMyMDQ2NTc1.-d3vJqc8u8YMhsaGqi4KqOsFtHy6WWQpZQhDRO8XHvIg.NsOC0S8jZ6upjmDVQR3oOIQbWyfH4oo4iJq5bCaLk4Yg.PNG.skycolor10/Group_3.png?type=w1" alt="돼지얼굴"></div>
+        <div class="text"><p>시간저금통</p></div>
+
+       <a href="{% url 'login' %}"> <h1> 화면을 터치하세요 </h1>
+    </div>
+</div>
+{% endblock wrapper %}

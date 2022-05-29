@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'pig_bye.css' %}">
+{% endblock css %}
+
+{% block title %}pig_bye{% endblock title %}
+
+{% block wrapper %}
+<div class="body">
+    <div class="head">
+        <div class="title_back">
+            <a href="#" onclick="history.back();">
+                <img class="back" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMTYy/MDAxNjUzNzU1NzY5OTU3.UCByLRd7XpAWlFO8M2Zf_1wH7sXVcnH3gfikPNiMERIg.AqY3eGPg8XKE4aeb2eUZLurEjCM8_RqZPIj1_57xcYcg.PNG.skycolor10/Arrow_2.png?type=w1">
+            </a>
+        </div>
+        <div class="title">
+            <span class="title_letter">저금통 깨기</span>
+        </div>
+        <div class="title">
+            <!-- 덩어리 -->
+        </div>
+    </div>
+    <div class="pig">
+        <span class="pig_text">{{ total_late }} 분</span>
+        <img class="mainpig" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMTYy/MDAxNjUzNzU4MzE1MTk3.HrTchmP0gjcDb5HW5Lm9eo3B3qFKGrChcTNG4SgPBRMg.EUmu1xQuT2dIaT6wh9JpAJoY2bfHKcTm5YcXKLr9l_4g.PNG.skycolor10/Intersect.png?type=w1">
+    </div>
+    <div class="buttonBox">
+        <div class="button">
+            <a href="{% url 'bye_donate' %}">기부하기</a>
+        </div>
+        <div class="button">
+            <a href="{% url 'bye_winner' %}">전달하기</a>
+        </div>
+    </div>
+</div>
+{% endblock wrapper %}

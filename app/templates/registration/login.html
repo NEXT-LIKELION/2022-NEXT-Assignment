@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+    <section>
+        <form method="POST" data-form-id="1">
+
+            <div class="wrapper">
+                <h1>시간저금통</h1>
+                {% csrf_token %} {% if error %}
+                <p>{{ error }}</p>
+                {% endif %}
+                <div class="id_pw">
+                    <input type="text" name="username" placeholder="아이디" />
+                    <input type="password" name="password" placeholder="비밀번호" />
+                    <button data-form-id="1">로그인</button>
+                </div>
+                <div class="signup">
+                    계정이 없으신가요? <a href="{% url 'signup' %}">회원가입</a>
+                </div> 
+            </div>
+        </form>
+    </section>
+
+    {% load static %}
+    <script src="{% static 'fade.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+html {
+    font-family: 'NanumGothic';
+    font-style: normal;
+}
+a {
+    text-decoration: none;
+    font-family: 'NanumGothic';
+    font-style: normal;
+}
+div.wrapper{
+    min-height:100vh;
+    max-width:375px;
+    width:100%;
+    margin:0 auto;
+    /* border:1px solid transparent; */
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    /* justify-content:center; */
+}
+p{
+    position:absolute;
+    display:flex;
+    justify-content:center;
+    width:90%;
+    height:15px;
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #4880EE;
+    margin-top:180px;
+}
+
+div.id_pw{
+    display:flex;
+    align-items: center;
+    flex-direction:column;
+    margin-top:50px;
+    width:80%;
+}
+
+input{
+    width:80%;
+    height:40px;
+    margin: 1rem 0 0 0;
+    border:0.5px solid rgb(255, 255, 255);
+    border-radius: 12px;
+    padding:5px;
+    background:#DFEAFF;
+}
+
+button{
+    width:50%;
+    height:50px;
+    background:#4880EE;
+    border:#4880EE;
+    border-radius:12px;
+    margin-top:50px;
+    color:white;
+    cursor:pointer;
+}
+button:hover {
+    background-color: #DFEAFF;
+    color: #4880EE;
+    transition: 0.3s;
+}
+div.signup a{
+    /* margin-top:80px; */
+    color:#4880EE;
+}
+.signup {
+    position: absolute;
+    bottom: 5vh;
+}
+
+
+h1{
+    display:flex;
+    justify-content:center;
+    width:151px;
+    height:32px;
+    font-family: 'NanumGothic';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 32px;
+    text-align: center;
+    color: #4880EE;
+    margin-top:100px;
+}

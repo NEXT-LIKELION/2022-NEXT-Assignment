@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'bye_winner_complete.css' %}">
+{% endblock css %}
+
+{% block wrapper %}
+<div class="body">
+    <box>hi</box>
+    <span class="bold">1등<span><span class="light">에게<span><br><span class="bold">모인 금액을</span><span class="light"> 보냈어요</span>
+    <br>
+    <img class="coin" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMTk3/MDAxNjUzNzY4OTM2NTQ5.IjulT92inp-G8oiQemEbP6mrL9Vas5_6raPLlrZANwEg.AH3iwlRabNPPMXi34BD6f3vpRJ4Rmb6DIH9kuohCLfQg.PNG.skycolor10/%EC%BD%94%EC%9D%B8.png?type=w1">
+    <br>
+    <img class="piggy" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMiAg/MDAxNjUzNzY4NDk2NTc1.eyuDGGeiI6fV7yZ_Muk0X6jm3GaR4uIBmINP-tVvfykg.Dwhm8YRCvCKnnpBWZElcgoEx_HKjM_1HAW7cJj-xK0Ig.PNG.skycolor10/%EC%A0%80%EA%B8%88%ED%86%B5_%EB%8F%BC%EC%A7%80.png?type=w1">
+    <div class="button">
+        <a href="{% url 'home' %}">확인</a>
+    </div>
+</div>
+    {% endblock wrapper %}
+    {% block script %}
+    <script src="{% static 'arrivepig.css' %}"></script>
+    {% endblock script %}

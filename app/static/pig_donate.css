@@ -1,0 +1,75 @@
+/* 메인 페이지 관련 */
+
+.body {
+    width: 375px;
+    height: 812px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    height: 102px;
+    width: 214px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}   
+
+.text {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    word-break: keep-all;
+}
+
+.buttonBox {
+    display: flex;
+    width: 65%;
+    justify-content: space-around;
+    margin-top: 5vh;
+}
+
+.button_left {
+    width: 106px;
+    height: 47px;
+    background-color: #4880EE;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.button_left span{
+    color: #FFFFFF;
+}
+
+.button_right span{
+    color: #000000;
+}
+
+.button_right {
+    width: 106px;
+    height: 47px;
+    background-color: #F2F3F4;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color: black;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: lightblue;
+    color: grey;
+    transition: 0.3s ease-out;
+}
+a {
+    text-decoration: none;
+}

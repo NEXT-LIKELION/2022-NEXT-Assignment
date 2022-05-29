@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'pig_detail.css' %}">
+{% endblock css %}
+
+{% block wrapper %}
+
+<div class="navbar">
+  <a href="{% url 'home' %}">
+      <img class="goback" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMTYy/MDAxNjUzNzU1NzY5OTU3.UCByLRd7XpAWlFO8M2Zf_1wH7sXVcnH3gfikPNiMERIg.AqY3eGPg8XKE4aeb2eUZLurEjCM8_RqZPIj1_57xcYcg.PNG.skycolor10/Arrow_2.png?type=w1">
+  </a>
+  <p>시간저금통</p>
+  <a href="{% url 'home' %}">
+      <img class="plus" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMjI2/MDAxNjUzNzU3NDExMTkz.GHCdLmjdL00wrmwCKdzE-bxf2dAC4ukNMShs3tJa_bsg.0CxAYd58X9UteroRYQXOhUlSQ31KmOei6hTR8dcnmagg.PNG.skycolor10/Group_63_%281%29.png?type=w1">
+  </a> 
+</div>
+
+<div class="title">
+  <h1>{{pig.pig_name}}</h1>
+</div>
+
+<div class="container_1">
+  <h2>
+    <div class="mylate">{{ time_late }}m</div>
+    <div class="totallate">/{{total_late}}m</div>
+  </h2>
+  <img class="img_pig" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfMjQg/MDAxNjUzNzU2MjYwMjI1.-9LIRfJz6HA80OIbjuAVkpiUdBpUjiRd9bhF8TUe-Msg.EluaVUIM63_OWZ7UOxOYKmTVt7R9TPM5Xd4ebf2vpx0g.PNG.skycolor10/Group_3_%281%29.png?type=w1">
+</div>
+
+{% if host.user.nickname == request.user.nickname %}
+<div class="button">
+  <a class="button_text" href="{% url 'pig_bye' pig.pk %}">저금통 깨기</a>
+</div>
+{% endif %}
+
+<div class="big_button">
+      <img class="calendar" src="https://blogfiles.pstatic.net/MjAyMjA1MjlfNzIg/MDAxNjUzNzU0MzA4MzE2.9HPg1oZp8IFJcRjQst1U8I0lZlaD5aowh1Fa_c8AvBQg.MNNQXTtrsDDf7Fs7YTdp-GHWKJNbUPssOOoi5_k8THMg.PNG.skycolor10/Group_42.png?type=w1">
+      <a class="big_button_text" href="{% url 'schedule_new' pig.pk %}">일정 추가</a>
+      <a class="big_button_text" href="{% url 'schedule_new' pig.pk %}"><img class="plus" src="https://blogfiles.pstatic.net/MjAyMjA1MjhfMTc2/MDAxNjUzNzM2MDE0NjUw.ngd1xIhmuZH8Oxheqwq9Jos_FXSG9AJBBx7fMlgH9sAg.O_imRCqvbho-_iy7KnMLMz6AALim56ZPtON_EukIHKUg.PNG.skycolor10/Group_1.png?type=w1"></a>
+</div>
+
+<div class="container_2">
+  <div class="schedule_list">
+    <p class="smalltitle">일정</p>
+    {% for schedule in schedules %}
+    <li class="schedule">
+      <div>
+        <span class="schedule_title">{{schedule.schedule_name}}</span>
+        <span class="schedule_description">{{schedule.schedule_description}}</span>
+      </div>
+      <div class="schedule_line">
+        <span>⏰ {{schedule.when_to_meet}}</span>
+        <span>📍 {{schedule.where_to_meet}}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </div>
+</div>
+<div class="container_2">
+  <div class="schedule_list">
+    <p class="smalltitle">멤버</p>
+    {% for participation in participations %}
+    <li class="schedule">
+      <div class="schedule_line">
+        <span>🙋 {{participation.profile.nickname}}</span>
+        <span>⏱ {{participation.time_late}}</span>
+      </div>
+    </li>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% comment %} <div class="container_3">
+  {% for participant in participants %}
+    <li> 🙋 {{ participant }}</li>
+  {% endfor %}
+</div> {% endcomment %}
+
+{% endblock wrapper %}
