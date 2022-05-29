@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'reload.css' %}">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="reload">reload</div>
+    <div class="usename">소환자명{{ username }}</div>
+    <div class="bullet_now">
+      현재 남은 Bullet은 다음과 같습니다.{{ bullet_now.num }}
+    </div>
+
+    <form method="POST">
+      <select name="bullet_reloaded" id="bullet_reloaded">
+        <option value="25">25</option>
+        <option value="15">15</option>
+        <option value="5">5</option>
+      </select>
+
+      <button type="submit">충전하기</button>
+    </form>
+  </body>
+</html>

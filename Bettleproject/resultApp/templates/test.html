@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'test.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <a href="{% url 'user:home' username %}"><div class="margin">
+      <h2>{{ username }}님께서는</h2>
+      {% if game_result == True %}
+      <h2><img src="../static/win.png"></h2>
+      {% else %}
+      <h2><img src="../static/패배.png"></h2>
+      {% endif %}
+    </div>
+  </a>
+  </body>
+</html>
+

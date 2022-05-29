@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(35, 36, 37);
+    color: white;
+    padding: 100px;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  .teamadd_box {
+    display: flex;
+    padding: 100px;
+    background-color: rgb(35, 36, 37);
+  }
+  
+  .box1 {
+    margin-right: 100px;
+  }
+  .teammates {
+    margin-top: 20px;
+  }
+  .ourteam {
+    margin-top: 20px;
+  }
+  
+  .bulletbet {
+  }
+  .user_input {
+    margin: 7px;
+    margin-top: 20px;
+    width: 200px;
+    height: 30px;
+  }
+  
+  .title1 {
+    font-size: 40px;
+  }
+  .title2 {
+    margin-bottom: 20px;
+  }
+  .dayselect {
+    margin: 10px;
+  }
+  .bullet_Bet {
+    margin-top: 30px;
+  }
+  .maketeam {
+    margin-top: 30px;
+    width: 200px;
+    height: 40px;
+  }
+  

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="background">
+      <div class="signup">
+        <a href="{% url 'signup' %}"><img src="../../static/signup.png"></a>
+      </div>
+
+    <section class="login">
+      <form action="" class="login_container" method="POST">
+        {% csrf_token %} {% if error %}
+        <p>{{error}}</p>
+        {% endif %}
+        <input type="text" name="username" placeholder="아이디" />
+        <input type="password" name="password" placeholder="비밀번호" />
+        <button type="submit"><img src="../../static/login.png"></button>
+      </form>
+      <!-- <img src="../static/login2.png" width="220" height="100" class="redimg"> -->
+      
+    </section>
+  </body>
+</html>

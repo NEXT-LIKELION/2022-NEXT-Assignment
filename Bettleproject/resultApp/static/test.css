@@ -1,0 +1,19 @@
+body{
+    background-color: rgb(35,36,37);
+}
+
+h2{
+    color:white;
+    font-size: larger;
+
+}
+
+.margin{
+    margin-top: 330px;
+    margin-left: 360px;
+}
+
+a{
+    text-decoration: none;
+}
+

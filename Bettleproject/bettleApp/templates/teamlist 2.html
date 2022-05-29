@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'teamlist.css' %}">
+{% endblock css %}
+{% block title %}
+<h1>매칭할 팀을 찾아보세요</h1>
+{% endblock title %}
+
+{% block content %}
+<h4>대전을 펼칠 팀을 찾아보세요</h4>
+<p>오늘 나의 상대는 너다!
+    <br>
+    실시간으로 팀 매칭을 요청해 보세요
+</p>
+<div class="matching_box">
+    {% if not teams %}
+    <p>대기중인 팀이 없습니다.</p>
+    {% endif %}
+    {% for team in teams %}
+        <div class = "team_wrapper">
+            <div class = "team_hostuser">
+                대표자는 <br>
+                소환사 [{{team.hostUser}}]님 
+                </div>
+            <div class = "team_content">
+                팀원들의 평균 실력은 <br>
+                <p>{{team.Tier}}</p>
+                <br>
+                원하는 대전 시간은 <br>
+                <p>{{team.matchDates}}</p>
+                </div>
+                <p>이 팀이 배팅한 BULLET 수는 {{team.bulletBet}}개</p>
+                <a href="{% url 'matchinfo' team.pk %}">대전 요청</a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

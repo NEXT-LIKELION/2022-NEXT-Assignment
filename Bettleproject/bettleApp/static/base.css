@@ -1,0 +1,33 @@
+.nav_bar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:rgb(34,35,37);
+    
+}
+
+body{
+    margin:0px;
+}
+
+.menu_bar_item{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width: 700px;
+}
+
+.nav_bar_menuItem{
+    text-decoration-line: none;
+    color:rgb(255,255,255);
+}
+
+.menu_bar{
+    list-style: none;
+}
+
+.nav_bar_logo{
+    display:flex;
+    align-items:center;
+    
+}

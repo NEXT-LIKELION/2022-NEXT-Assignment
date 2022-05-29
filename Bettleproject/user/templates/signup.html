@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'signup.css' %}" />
+    <title>회원가입하기</title>
+  </head>
+  <body>
+    <section>
+      <form id="signup" method="POST">
+        {% csrf_token %}
+        <input class="label"
+          type="text"
+          name="username"
+          placeholder="아이디"
+          value="{{ username }}"
+        />
+        <input class="label" type="text" name="summoner_name" placeholder="소환사명" />
+        {% if summoner_error_msg %}
+        <p style="color: red">{{ summoner_error_msg }}</p>
+        {% endif %}
+        <input class="label" type="password" name="password" placeholder="비밀번호" />
+        {% if password_error_msg %}
+        <p style="color: red">{{ password_error_msg }}</p>
+        {% endif %}
+        <input class="label" type="password" name="password2" placeholder="비밀번호 확인" />
+        <button type="submit">회원가입하기</button>
+      </form>
+    </section>
+  </body>
+</html>

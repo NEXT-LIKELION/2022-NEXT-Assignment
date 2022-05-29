@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '../.css' %}">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Jua&display=swap" rel="stylesheet">
+    <title>BETTLE</title>
+</head>
+<body>
+  <div class="background">
+    <nav class="nav_bar">
+        <div class="nav_bar_logo">
+          <img src="../../static/logo.png">
+        </div>
+        
+        <ul class="nav_bar_menu">
+          <div class="menu_bar_item">
+            <Li><a class="nav_bar_menuItem" href="{% url 'user:home' user.username %}"> HOME </a></Li>
+            <Li><a class="nav_bar_menuItem" href="{% url 'user:reload' %}"> BULLET 충전 </a></Li>
+            <Li><a class="nav_bar_menuItem" href="{% url 'teamadd' %}"> 팀 생성하기 </a></Li>
+            <Li><a class="nav_bar_menuItem" href="{% url 'teamlist' %}"> 팀 매칭하기 </a></Li>
+            <Li><a class="nav_bar_menuItem" href="{% url 'user:logout' %}"> 로그아웃 </a></Li>
+
+          </div>
+      </ul>
+    </nav>
+<div class="container2">
+    <div class ="container">
+      <div class = 'title'>
+        <h2> {{current_user.username}} 소환사님 환영합니다. </h2>
+      </div>
+    
+      <div class="my_info">
+        <p>내가 가진 불릿 수 : {{bullet_num}}개</p>
+        <p>매칭된 팀 리스트</p>
+
+        <div class="img">
+          <a href="{% url 'teamlist' %}"><img src="../../static/매칭버튼.png"></a>
+        </div>
+      </div> 
+    </div>
+</div>
+</body>

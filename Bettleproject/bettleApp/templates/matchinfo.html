@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'matchinfo.css' %}">
+{% endblock css %}
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<div class="imgmatch">
+    <img src="../../static/매칭된팀.png">
+</div>
+<br>
+<br>
+<br>
+<div class="info_box">
+    <div class="king">대표자ID : 소환사 {{info_team.hostUser}} 님</div>
+    <div>
+        <div><p>
+        소환사 {{info_team.hostUser}} 님의 팀원들의 라이엇 아이디는<br>
+        {{info_team.firstMember}}<br>
+        {{info_team.secondMember}}<br>
+        {{info_team.thirdMember}}<br>
+        {{info_team.fourthMember}}<br>
+        </p></div>
+        <div><p>원하는 대전 시간은</p></div>
+        {% for date in info_team.get_matchDates %}
+        <p>{{ date }}</p>
+        {% endfor %}
+        <br>
+        <div><p>이 팀이 배팅한 BULLET수는 {{info_team.bulletBet}}개</p></div>
+        <a href="{% url 'resultApp:gaming' %}">GAME START!</a>
+    </div>
+</div>
+
+{% endblock content %}

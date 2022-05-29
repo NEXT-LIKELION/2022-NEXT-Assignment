@@ -1,0 +1,14 @@
+
+.body{
+    height: 100vh;
+    background:url(Bettleproject\resultApp\static\게임중일 때 화면.png) no-repeat center;
+    background-size:cover;
+}
+
+.Endbutton{
+    position: absolute;
+    width: 584px;
+    height: 78px;
+    left: 136px;
+    top: 561px;
+}

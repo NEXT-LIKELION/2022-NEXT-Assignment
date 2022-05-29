@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'matchinfo.css' %}">
+{% endblock css %}
+{% block title %}
+{% endblock title %}
+
+{% block content %}
+<h1>매칭된 팀의 정보를 확인하세요</h1>
+<div class="info_box">
+    <div>대표자는 소환사 {{info_team.hostUser}} 님</div>
+    <div>
+        <p>
+        소환사 {{info_team.hostUser}} 님의 팀원들의 라이엇 아이디는<br>
+        {{info_team.firstMember}}<br>
+        {{info_team.secondMember}}<br>
+        {{info_team.thirdMember}}<br>
+        {{info_team.fourthMember}}<br>
+        </p>
+        <p>원하는 대전 시간은</p>
+        {{info_team.matchDates}}
+        <br>
+        <p>이 팀이 배팅한 BULLET수는 {{}}개</p>
+    </div>
+    <a href="{% url 'startgame' %}">게임 시작하기</a>
+</div>
+
+{% endblock content %}

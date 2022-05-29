@@ -1,0 +1,70 @@
+body {
+    margin: 0;
+}
+
+.img{
+    padding:20px;
+}
+
+.background {
+    background-image: url("../../static/홈배경.png");
+    background-image: no-repeat;
+    min-height:100vh;
+    height: 140vh;
+    background-size: cover;
+  }
+
+.my_info {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.container{
+    position: absolute;
+    width: 800px;
+    height: 186px;
+    left: 300px;
+    top: 550px;
+    color: white;
+    font-size: 30px;
+    
+
+
+  }
+  .container2{
+      margin-bottom: 150px;
+      margin-right: 70px;
+
+  }
+
+  .nav_bar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:rgb(34,35,37);
+    
+}
+
+
+.menu_bar_item{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-evenly;
+    width: 700px;
+}
+
+.nav_bar_menuItem{
+    text-decoration-line: none;
+    color:rgb(255,255,255);
+}
+
+.menu_bar{
+    list-style: none;
+}
+
+.nav_bar_logo{
+    display:flex;
+    align-items:center;
+    
+}

@@ -1,0 +1,266 @@
+{% extends 'base.html' %} {% block css %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'teamadd.css' %}" />
+{% endblock %} {% block title %} {% endblock title %} {% block content %}
+
+
+
+<div class="teamadd_box">
+    <div class="box1">
+      <div class="title1">팀을 생성하세요</div>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <div class="team_add">
+        <div class="ourteam">대전에서 가장 중요한 건 우리의 팀!</div>
+        <div class="teammates">
+          대전을 함께 할 팀원들을 입력해주세요<br />
+          팀원들의 라이엇 아이디를 입력하고 제출 버튼을 눌러주세요
+        </div>
+        <div>
+          <label for="hostUser"></label>
+          <input class="user_input" type="text" name="hostUser" id="hostUser" placeholder="내 라이엇 아이디"/>
+        </div>
+        <div>
+          <label for="firstMember"></label>
+          <input class="user_input" type="text" name="firstMember" id="firstMember" placeholder="첫번째 소환사명:" />
+        </div>
+        <div>
+          <label for="secondMember"></label>
+          <input class="user_input" type="text" name="secondMember" id="secondMember" placeholder="두번째 소환사명:" />
+        </div>
+        <div>
+          <label for="thirdMember"></label>
+          <input class="user_input" type="text" name="thirdMember" id="thirdMember" placeholder="세번째 소환사명" />
+        </div>
+        <div>
+          <label for="thirdMember"></label>
+          <input class="user_input" type="text" name="fourthMember" id="fourthMember"placeholder="네번째 소환사명"/>
+        </div>
+      </div>
+    </div>
+      <div class="box2">
+        <div class="title1">조건을 입력하세요</div>
+        <br/>
+        <div class="title2">팀원들의 평균 실력이 어떻게 되시나요?</div>
+        <div class="Tier_select">
+          <label for="Tier">팀 평균 티어를 골라주세요 : </label>
+          <select name="Tier" id="Tier">
+            <option value="bronze">브론즈</option>
+            <option value="silver">실버</option>
+            <option value="gold">골드</option>
+            <option value="platium">플래티넘</option>
+            <option value="diamond" `>다이아몬드</option>
+          </select>
+        </div>
+        <div class="Day_select">
+          <label for="matchDate"> 원하는 매칭 시간대를 골라주세요 : </label>
+          <div class="Monday">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="월요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="월요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="월요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="월요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="월요일 심야(24:00~03:00)"
+            />
+          </div>
+          <div class="Tuesday">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="화요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="화요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="화요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="화요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="화요일 심야(24:00~03:00)"
+            />
+          </div>
+          <div class="Wednesday">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="수요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="수요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="수요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="수요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="수요일 심야(24:00~03:00)"
+            />
+          </div>
+          <div class="Thursay">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="목요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="목요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="목요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="목요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="목요일 심야(24:00~03:00)"
+            />
+          </div>
+          <div class="Friday">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="금요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="금요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="금요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="금요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="금요일 심야(24:00~03:00)"
+            />
+          </div>
+          <div class="Saturday">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="토요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="토요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="토요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="토요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="토요일 심야(24:00~03:00)"
+            />
+          </div>
+          <div class="Sunday">
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="일요일 낮(12:00~15:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="일요일 오후(15:00~18:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="일요일 저녁(18:00~21:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="일요일 밤(21:00~24:00)"
+            />
+            <input
+              type="checkbox"
+              name="match_dates[]"
+              value="일요일 심야(24:00~03:00)"
+            />
+          </div>
+        </div>
+        <div class="bullet_Bet">
+          <label for="bulletBet">몇 개의 불릿을 배팅하시겠습니까?</label>
+          <select name="bulletBet">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="25">25</option>
+          </select>
+        </div>
+        <div class="maketeam">
+            <button type="submit"> <img src="../../static/생성버튼.png" alt="export"></button>
+        </div>       
+      </div>
+    </form>
+  </div>
+  <div class ="wave">
+    <img src="../../static/배경 로고.png" alt="wave">
+</div>
+  {% endblock content %}
+</div>

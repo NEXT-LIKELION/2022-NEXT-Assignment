@@ -1,0 +1,38 @@
+body {
+    background-image: url('./회원가입화면.png');
+    background-image: no-repeat;
+    height:100vh;
+    background-size: cover;
+}
+
+#signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position:absolute;
+    top: 68%;
+    left: 80px;
+}
+
+.label{
+    margin:5px;
+}
+
+button{
+    position: relative;
+    width: 190px;
+    height: 25px;
+    margin-top: 10px; 
+    
+    background: #FF0000;
+    border-radius: 100px;
+    border-color: #FF0000;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #FFFFFF;
+
+}

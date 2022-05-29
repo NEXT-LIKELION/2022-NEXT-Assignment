@@ -1,0 +1,35 @@
+.background {
+  background-image: url("./user_background.png");
+  background-image: no-repeat;
+  height: 100vh;
+  background-size: cover;
+}
+
+.redimg {
+  background-image: url("./login2.png");
+  background-image: no-repeat;
+  width: 198px;
+  height: 70px;
+}
+
+.signup {
+  width: 274px;
+  height: 120px;
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+body {
+  margin: 0vh;
+}
+
+.login_container {
+  display: flex;
+  flex-direction: column;
+}
+
+#login {
+  background: url(../static/login.png);
+  background-repeat: no-repeat;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    {% block css %}
+    {% endblock css %}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&family=Jua&display=swap" rel="stylesheet" />
+    <title>BETTLE</title>
+</head>
+<body>
+    </div>
+    <nav class="nav_bar">
+        <div class="nav_bar_logo">
+            <img src="{% static 'logo.png' %}" />
+        </div>
+        
+        <ul class="nav_bar_menu">
+            <div class="menu_bar_item">
+                <Li><a class="nav_bar_menuItem" href="{% url 'user:home' user.username %}"> HOME </a></Li>
+                <Li><a class="nav_bar_menuItem" href="#"> BULLET 충전 </a></Li>
+                <Li><a class="nav_bar_menuItem" href="{% url 'teamadd' %}"> 팀 생성하기 </a></Li>
+                <Li><a class="nav_bar_menuItem" href="{% url 'teamlist' %}"> 팀 매칭하기 </a></Li>
+                <Li><a class="nav_bar_menuItem" href="{% url 'user:logout' %}"> 로그아웃 </a></Li>
+
+            </div>
+        </ul>
+    </nav>
+    <div class = 'title'>
+        {% block title %}
+        {% endblock title %}
+    <div class="container">
+        {% block content %}
+        {% endblock content %}
+    </div>
+</body>
+</html>
