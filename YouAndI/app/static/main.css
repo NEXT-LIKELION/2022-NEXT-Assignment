@@ -1,0 +1,72 @@
+@font-face {
+    font-family: 'DeogonPrincess';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/DeogonPrincess.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    margin:0;
+    padding:0;
+    Width: 390px;
+    Height: 844px;
+    background: linear-gradient(179.79deg, #DA4322 0.18%, rgba(255, 93, 2, 0) 111.63%);
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-family: 'DeogonPrincess';
+    font-size: large;
+    margin: 0;
+    padding: 0;
+
+}
+
+.title {
+    position:absolute;
+    font-family: 'DeogonPrincess';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 0px;
+    color: #FFFFFF;
+    left: 18.46%;
+    right: 18.72%;
+    top: 18.45%;
+    bottom: 76.18%;
+}
+
+
+.rule {
+    width:90%;
+    left: 6.15%;
+    right: 6.15%;
+    top: 25.36%;
+    bottom: 65.17%;
+    position:absolute;
+    font-family: 'DeogonPrincess';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.new {
+    position: absolute;
+    left: 7.44%;
+    right: 9.23%;
+    top: 37.09%;
+    bottom: 35.31%;
+}
+
+.img {
+    position: absolute;
+width: 352px;
+height: 369px;
+margin:0;
+padding:0;
+left: 5%;
+top: 55%;
+}

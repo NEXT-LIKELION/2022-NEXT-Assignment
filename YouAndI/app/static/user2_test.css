@@ -1,0 +1,133 @@
+@font-face {
+    font-family: 'DeogonPrincess';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/DeogonPrincess.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    margin:0;
+    padding:0;
+    Width: 390px;
+    Height: 844px;
+    background: linear-gradient(179.79deg, #DA4322 0.18%, rgba(255, 93, 2, 0) 111.63%);
+}
+
+.rule{
+    position: absolute;
+    left: 29.23%;
+    right: 29.49%;
+    top: 22.51%;
+    bottom: 74.53%;
+
+font-family: 'Deogon Princess';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+
+#user2Name {
+    position: absolute;
+    left: 25.13%;
+    right: 25.13%;
+    top: 6.28%;
+    bottom: 79.5%;
+    
+    font-family: 'Deogon Princess';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 60px;
+    text-align: center;
+    
+    color: #FFFFFF;
+}
+
+.click{
+    background-color: transparent;
+    border:transparent;
+}
+
+.img{
+    position:absolute;
+    left: 8.46%;
+right: 8.21%;
+top: 57.7%;
+bottom: 14.69%;
+}
+
+
+.buttonText{
+    padding:0px 10px;
+    margin: 0px;
+}
+
+.click{
+    padding: 4px;
+    font-family: 'Deogon Princess';
+    font-style: normal;
+    font-size:20px;
+
+    margin: 0px 5.5px;
+
+/* surface */
+
+background: #FFFFFF;
+/* 08 dp */
+
+box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.14), 0px 3px 14px rgba(0, 0, 0, 0.12), 0px 5px 5px rgba(0, 0, 0, 0.2);
+border-radius: 16px;
+}
+
+.container {
+
+    right:5%;
+    left:5%;
+    position: absolute;
+    display:flex;
+    flex-grow:1;
+    justify-content: center;
+    width:90%;
+}
+
+#container1{
+    position:absolute;
+    top: 29.27%;
+bottom: 66.94%;
+}
+
+#container2{
+    position:absolute;
+    top: 34.95%;
+bottom: 61.26%;
+}
+
+#container3{
+    position:absolute;
+    top: 40.76%;
+bottom: 55.45%;
+}
+
+#container4{
+    position:absolute;
+    top: 46.56%;
+bottom: 49.64%;
+}
+
+#container5{
+    position:absolute;
+    top: 52.73%;
+    bottom: 43.48%;
+}
+
+
+#con{
+    text-align: center;
+
+}

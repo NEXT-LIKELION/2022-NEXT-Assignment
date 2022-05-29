@@ -1,0 +1,82 @@
+@font-face {
+    font-family: 'DeogonPrincess';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/DeogonPrincess.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    margin:0;
+    padding:0;
+    Width: 390px;
+    Height: 844px;
+    background: linear-gradient(179.79deg, #DA4322 0.18%, rgba(255, 93, 2, 0) 111.63%);
+}
+
+.title{
+    position: absolute;
+    left: 26.92%;
+    right: 26.67%;
+    top: 19.67%;
+    bottom: 73.22%;
+
+font-family: 'Deogon Princess';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 60px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.rule{
+    position: absolute;
+left: 22.31%;
+right: 22.31%;
+top: 31.04%;
+bottom: 66%;
+
+font-family: 'Deogon Princess';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 25px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+
+#user2NickName {
+    position: absolute;
+left: 15.38%;
+right: 15.13%;
+top: 38.27%;
+bottom: 55.81%;
+font-family: 'Deogon Princess';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+background: #FFFFFF;
+border: 1px solid #7A7878;
+border-radius: 23px;
+}
+
+
+#start{
+    position: absolute;
+    left: 8.46%;
+    right: 8.21%;
+    top: 44.19%;
+    bottom: 28.2%;
+background-color: transparent;
+border: transparent;
+}
+
+.img{
+    position:absolute;
+    top: 67.18%;
+    left:0;
+}

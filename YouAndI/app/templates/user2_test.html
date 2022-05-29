@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'user2_test.css' %}">    
+    <title>Document</title>
+</head>
+<body>
+
+<center>
+    <span id='user2Name'>{{guest.name}}</span>
+    <span class="rule">5개의 정답을 고르거라!</span>
+    <br><br>
+    <div id="con">
+        <div id="contain">
+            <div id='container1' class="container">               
+                <p id='1' class="click" onclick="clickedAns(this)"></p>
+                <p id='2' class="click" onclick="clickedAns(this)"></p>
+                <br>
+            </div>
+            <div id='container2' class="container">
+                <p id='3' class="click" onclick="clickedAns(this)"></p>
+                <p id='4' class="click" onclick="clickedAns(this)"></p>
+                <br>
+            </div>
+            <div id='container3' class="container">
+                <p id='5' class="click" onclick="clickedAns(this)"></p>
+                <p id='6' class="click" onclick="clickedAns(this)"></p>
+                <br>
+            </div>
+            <div id='container4' class="container"> 
+                <p id='7' class="click" onclick="clickedAns(this)"></p>
+                <p id='8' class="click" onclick="clickedAns(this)"></p>                   
+                <br>
+            </div>
+            <div id='container5' class="container">
+                <p id='9' class="click" onclick="clickedAns(this)"></p>
+                <p id='10' class="click" onclick="clickedAns(this)"></p>
+                <br>
+            </div>
+
+            {% comment %} <div id="result">
+                <a href="{% url 'result' test.pk guest.pk %}"><button id="result2">결과 보기</button></a>
+            </div> {% endcomment %}
+
+            <div id="result">
+                <a href="{% url 'result' test.pk guest.pk %}">결과 보기</a>
+            </div>
+        {% comment %} <button type = "submit" id="start">제출하기</button> {% endcomment %}
+         
+    </div>
+</center>
+</body>
+
+<script>
+    let tags = ["{{test.truetag1}}", "{{test.truetag2}}", "{{test.truetag3}}", "{{test.truetag4}}", "{{test.truetag5}}", 
+    "{{test.falsetag1}}","{{test.falsetag2}}","{{test.falsetag3}}","{{test.falsetag4}}","{{test.falsetag5}}",]
+
+    let truetags = ["{{test.truetag1}}", "{{test.truetag2}}", "{{test.truetag3}}", "{{test.truetag4}}", "{{test.truetag5}}",]
+</script>
+<script src="{% static 'js/user2_test.js' %}"></script>
+</html> 

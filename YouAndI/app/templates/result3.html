@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'result3.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<center>
+    <div id="title">
+        <span score="score">2</span><span class="score">/5개</span>
+    </div>
+</center>
+<a id="img" href="{% url 'main' %}"><img src="../static/테스트 만들기.png"></a>
+<img src="../static/석원.svg">
+</body>
+<script>
+    let tags = ["{{test.truetag1}}", "{{test.truetag2}}", "{{test.truetag3}}", "{{test.truetag4}}", "{{test.truetag5}}", 
+    "{{test.falsetag1}}","{{test.falsetag2}}","{{test.falsetag3}}","{{test.falsetag4}}","{{test.falsetag5}}",]
+
+    let truetags = ["{{test.truetag1}}", "{{test.truetag2}}", "{{test.truetag3}}", "{{test.truetag4}}", "{{test.truetag5}}",]
+</script>
+</html>

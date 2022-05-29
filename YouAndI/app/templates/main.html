@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+<center>
+    <div class="title"><span>너가궁궁예</span></div>
+    <div class="rule"><span>네놈 머리 속에 마구니가 가득한지</span><br><span>이 궁예가 판단해주마!</br></div>
+    <div class="new">
+        <a href="{% url 'userlogin' %}"><img src="../static/Group 152.svg"></a>
+    </div>
+    <div class="img"> <img src="../static/Group 156.svg"></div>
+    <br><br>
+    {% comment %} <a href="{% url 'usersignup' %}"><button>회원가입하기</button></a><br> {% endcomment %}
+</center>
+</body>
+</html>

@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'DeogonPrincess';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2205@1.0/DeogonPrincess.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    margin:0;
+    padding:0;
+    Width: 390px;
+    Height: 844px;
+    background: linear-gradient(179.79deg, #DA4322 0.18%, rgba(255, 93, 2, 0) 111.63%);
+}
+
+.user1Name{
+    text-align: center;
+top: 20%;
+margin:auto;
+bottom: 84.72%;
+
+font-family: 'Deogon Princess';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 60px;
+/* identical to box height */
+
+text-align: center;
+
+color: #FFFFFF;
+}
+
+#testName{
+position: absolute;
+left: 15.38%;
+right: 15.13%;
+top: 16%;
+bottom: 78.08%;
+    width:271px;
+    height:7%;
+    background: #FFFFFF;
+    border: 1px solid #7A7878;
+    border-radius: 23px;
+    font-family: 'Deogon Princess';
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.text2{
+    position: absolute;
+    font-family: 'Deogon Princess';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+    left: 31.03%;
+    right: 33.59%;
+    top: 24.29%;
+    bottom: 72.75%;    
+    color: #FFFFFF;
+}
+
+.text3{
+    
+position: absolute;
+font-family: 'Deogon Princess';
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 20px;
+padding: 4px;
+color: #FFFFFF;
+background: #A44242;
+border-radius: 16px;
+width:35.1%;
+height:2.8%;
+}
+
+#correct{
+    position: absolute;
+left: 9.62%;
+right: 55.26%;
+top: 29.62%;
+bottom: 65%;
+}
+
+#wrong{
+    position: absolute;
+    left: 55%;
+    right: 9.87%;
+    top: 29.62%;
+    bottom: 65%;
+}
+
+.input{
+    width:34.1%;
+    height:3.5%;
+    padding:4px;
+    position: absolute;
+background: #FFFFFF;
+border: 1px solid #7A7878;
+border-radius: 16px;
+font-family: 'Deogon Princess';
+font-size: 20px;
+}
+
+form{
+    display:block;
+}
+
+#true1{
+    position: absolute;
+left: 10%;
+right: 55.64%;
+top: 35.31%;
+bottom: 60.9%;
+
+}
+#true2{
+    position: absolute;
+left: 10%;
+right: 55.64%;
+top: 41.82%;
+bottom: 54.38%;
+
+}
+#true3{
+    position: absolute;
+left: 10%;
+right: 55.64%;
+top: 48.34%;
+bottom: 47.87%;
+
+}
+#true4{
+    position: absolute;
+left: 10%;
+right: 55.64%;
+top: 54.86%;
+bottom: 41.35%;
+
+}
+
+#true5{
+    position: absolute;
+left: 10%;
+right: 55.64%;
+top: 61.37%;
+bottom: 34.83%;
+
+}
+
+#false1{
+    left: 55.64%;
+right: 10.26%;
+top: 35.31%;
+bottom: 60.9%;
+
+}
+
+#false2{
+    left: 55.64%;
+right: 10.26%;
+top: 41.82%;
+bottom: 54.38%;
+}
+
+#false3{
+    left: 55.64%;
+right: 10.26%;
+top: 48.34%;
+bottom: 47.87%;
+
+}
+
+#false4{
+    left: 55.64%;
+right: 10.26%;
+top: 54.86%;
+bottom: 41.35%;
+}
+
+#false5{
+    left: 55.64%;
+right: 10.26%;
+top: 61.37%;
+bottom: 34.83%;
+
+}
+
+#share{
+
+    position: absolute;
+left: 6.46%;
+right: 8.21%;
+top: 67.81%;
+bottom: 7.58%;
+background-color: transparent;
+border: transparent;
+}
