@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'edit.css' %}">
+{% endblock css %}
+
+{% comment %} <script>
+var alert_select_value = function (select_obj){
+    // 우선 selectbox에서 선택된 index를 찾고 
+    var selected_index = select_obj.selectedIndex;
+    // 선택된 index의 value를 찾고 
+    var selected_value = select_obj.options[selected_index].value;
+    // 원하는 동작을 수행한다. 여기서는 그냥 alert해주는 식으로만 처리함. 
+    alert(selected_value);
+};
+</script> {% endcomment %}
+
+{% block content %}
+    <div class="title-bar">
+        <div>
+            <a href="#" onClick="history.back()"> < </a> 
+        </div>
+        <div>명함 수정하기</div>
+        <div class="invisible"> > </div>
+    </div>
+    <img class="banner" src="https://ifh.cc/g/OCo7WN.png">
+
+    <form method="POST">
+        {% csrf_token %}
+
+        {% if error %}
+        <p class="error_message">{{ error }}</p>
+        {% endif %}
+
+        <h2>Step 1: 필수 항목을 채워주세요!</h2>
+
+        <div>
+            <h3>프로필 사진</h3>
+            <p>아래 이미지 중 하나를 선택해 주세요</p>
+            <div class="input-box">
+                {% for pic in profile_pics_1 %}
+                <img src="{{pic}}" height="135" width="135">
+                {% endfor %}
+            </div>
+            <br>
+            <div class="input-box">
+                <span>
+                <input type="radio" id="profileChoice1"
+                name="profile_pic" value="1" required>
+                <label for="profileChoice1">1</label>
+                </span>
+                <span>
+                <input type="radio" id="profileChoice2"
+                name="profile_pic" value="2">
+                <label for="profileChoice2">2</label>
+                </span>
+                <span>
+                <input type="radio" id="profileChoice3"
+                name="profile_pic" value="3">
+                <label for="profileChoice3">3</label>
+                </span>
+            </div>
+            <br>
+            <br>
+            <div class="input-box">
+                {% for pic in profile_pics_2 %}
+                <img src="{{pic}}" height="135" width="135">
+                {% endfor %}
+            </div>
+            <br>
+            <div class="input-box">
+                <span>
+                <input type="radio" id="profileChoice4"
+                name="profile_pic" value="4" required>
+                <label for="profileChoice4">4</label>
+                </span>
+                <span>
+                <input type="radio" id="profileChoice5"
+                name="profile_pic" value="5">
+                <label for="profileChoice5">5</label>
+                </span>
+                <span>
+                <input type="radio" id="profileChoice6"
+                name="profile_pic" value="6">
+                <label for="profileChoice6">6</label>
+                </span>
+            </div>
+            <br>
+            <br>
+            <div class="input-box">
+                {% for pic in profile_pics_3 %}
+                <img src="{{pic}}" height="135" width="135">
+                {% endfor %}
+            </div>
+            <br>
+            <div class="input-box">
+                <span>
+                <input type="radio" id="profileChoice7"
+                name="profile_pic" value="7" required>
+                <label for="profileChoice7">7</label>
+                </span>
+                <span>
+                <input type="radio" id="profileChoice8"
+                name="profile_pic" value="8">
+                <label for="profileChoice8">8</label>
+                </span>
+                <span>
+                <input type="radio" id="profileChoice9"
+                name="profile_pic" value="9">
+                <label for="profileChoice9">9</label>
+                </span>
+            </div>
+            <br>
+            <br>
+            {% for pic in profile_pics_4 %}
+            <img src="{{pic}}" height="135" width="135">
+            {% endfor %}
+            <br>
+
+            <div class="input-box">
+                <span>
+                    <input type="radio" id="profileChoice4"
+                    name="profile_pic" value="10">
+                    <label for="profileChoice10">10</label> 
+                </span>
+                <span></span>
+                <span></span>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <h3>이름</h3>
+        <input type="text" name="name" value="{{ card.name }}" placeholder="한글 10자, 영문 20자 이내로 입력해 주세요." required/>
+        <h3>전화번호</h3>
+        <input type="text" name="phone_num" value="{{ card.phone_num }}" placeholder="ex) 010-0000-0000" required/>
+        <h3>내 도메인 주소</h3>
+        <p class="ex">ex) 'mycard'입력 시 내 도메인 </p>
+        <input type="text" name="link" value="{{ card.link }}" placeholder="firstme.com/mycard/" required/>
+        <p>영문/숫자만 입력가능합니다.</p>
+
+        <br>
+        <h2>Step 2: 선택 항목을 채워주세요!</h2>
+        <h3>한 줄 소개</h3>
+        <input type="text" name="intro" max_length="50" placeholder="30자 이내" value="{{ card.intro }}" />
+        <br>
+        <h3>MBTI</h3>
+        <select name="mbti">
+            <option value="" selected>비공개</option>
+
+            <option value="INFJ">INFJ</option>
+            <option value="INFP">INFP</option>
+            <option value="INTJ">INTJ</option>
+            <option value="INTP">INTP</option>
+
+            <option value="ISFJ">ISFJ</option>
+            <option value="ISFP">ISFP</option>
+            <option value="ISTJ">ISTJ</option>
+            <option value="ISTP">ISTP</option>
+
+            <option value="ENFJ">ENFJ</option>
+            <option value="ENFP">ENFP</option>
+            <option value="ENTJ">ENTJ</option>
+            <option value="ENTP">ENTP</option>
+
+            <option value="ESFJ">ESFJ</option>
+            <option value="ESFP">ESFP</option>
+            <option value="ESTJ">ESTJ</option>
+            <option value="ESTP">ESTP</option>
+        </select>
+        
+        <br>
+        <button class="submit" type="submit">명함 수정하기</button>
+    </form>
+
+{% endblock content %}

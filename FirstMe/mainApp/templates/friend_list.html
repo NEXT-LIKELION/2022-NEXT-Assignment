@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'friend_list.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+{% if error %}
+    <p class="error_message">{{ error }}</p>
+    
+{% else %}
+
+<div class="title-bar">
+    <div>
+        <a href="{% url 'home' %}"> < </a> 
+    </div>
+    <div class="title">친구 목록</div>
+    <div class="invisible"> > </div>
+</div>
+
+<!-- 친구 목록에서 친구 이름 + 전번만 보이는 리스트 -->
+<div class="list">
+    <div>
+        {% for card_list in all_cards_list_new %}
+        <div class="list-item">
+            {% for info in card_list %}
+                {{ info }} |
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+    <!-- 친구 목록에서 친구 이름 + 전번만 보이는 리스트 -->
+
+    <div>
+        <div class="list-item">
+        {% for link in all_link_list_new %}
+        <a href="{% url 'detail' link %}">바로가기</a>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+<a href="{% url 'group_list' card.link %}">
+    <button type="submit">
+        그룹 목록으로
+    </button>
+</a>
+
+{% endif %}
+{% endblock content %}

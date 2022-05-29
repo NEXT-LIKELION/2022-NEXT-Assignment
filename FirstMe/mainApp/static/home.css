@@ -1,0 +1,158 @@
+
+.container {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    
+}
+.logo-bar {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.logout{
+    margin: auto;
+    position: relative;
+    left: 50px;
+}
+.logo-bar > p{
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 38.4px;
+    background: linear-gradient(144.22deg, #FFBF8B 0%, #EE4D5F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* 로그인 아님 */
+
+.invisible{
+    color:transparent;
+}
+
+.login{
+    margin: auto;
+    position: relative;
+    left: 50px;
+}
+
+.intro{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */   
+    text-align: center; 
+    color: rgba(28, 26, 26, 0.53);  
+    position: relative;
+    bottom:10px;
+}
+
+button{
+    background: #FF8282;
+    border-radius: 5px;
+    border: solid #FF8282;
+    color: white;
+    font-size: 18px;
+    width: 166px;
+    height: 50px;
+    margin-top: 13px;
+    filter: drop-shadow(4px 4px 8px rgba(230, 91, 91, 0.25));
+}
+
+.buttons{
+    margin-left: 14px;
+}
+
+.ex_image{
+    filter: drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+a {
+    text-decoration: none;
+    color: #FF8282;
+    font-weight: 600;
+}  
+
+
+
+
+/* 로그인일때 */
+.top-bar > p{
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 38.4px;
+    background: linear-gradient(144.22deg, #FFBF8B 0%, #EE4D5F 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+.top-bar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.invisible {
+    color: transparent;
+}
+
+.entire-container{
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mycard{
+    margin-right:15px;
+    width: 332px;
+    height: 530px;
+    background: linear-gradient(144.22deg, #FFCDA5 0%, #EE4D5F 100%);
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 8px rgba(230, 91, 91, 0.25));
+}
+
+.face{
+    position: relative;
+    left:67px;
+    top:45px;
+    z-index: 2;
+}
+
+.circle{
+    position:relative;
+    left:67px;
+    bottom:150px;
+    z-index:1;
+}
+
+.card-name{
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.card-content{
+    position: relative;
+    left:20px;
+    bottom:150px;
+    color:  #FFFFFF;
+    
+}
+
+.phone-num{
+    margin-bottom:27px;
+}
+
+.card-intro{
+    margin-bottom:27px;
+}
+
+.bottom-button{
+    margin-top: 16px;
+}

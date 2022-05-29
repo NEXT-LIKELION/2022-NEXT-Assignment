@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'make.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<h2>내 카드 만들기</h2>
+
+{% if error %}
+    <p class="error_message">{{ error }}</p>
+{% else %}
+    <form method="POST">
+        {% csrf_token %}
+        <h2>Step 1: 필수</h2>
+        <input type="text" name="name" placeholder="이름" required/>
+        <input type="text" name="phone_num" placeholder="전화번호 ex)01012345678" required/>
+        <input type="text" name="link" placeholder="내 도메인 주소" required/>
+        <br>
+        <h2>Step 2: 선택</h2>
+        <input type="text" name="intro" max_length="50" placeholder="한줄 소개" />
+        <br>
+        <select name="mbti">
+            <option value="" selected>MBTI 선택하기</option>
+
+            <option value="INFJ">INFJ</option>
+            <option value="INFP">INFP</option>
+            <option value="INTJ">INTJ</option>
+            <option value="INTP">INTP</option>
+
+            <option value="ISFJ">ISFJ</option>
+            <option value="ISFP">ISFP</option>
+            <option value="ISTJ">ISTJ</option>
+            <option value="ISTP">ISTP</option>
+
+            <option value="ENFJ">ENFJ</option>
+            <option value="ENFP">ENFP</option>
+            <option value="ENTJ">ENTJ</option>
+            <option value="ENTP">ENTP</option>
+
+            <option value="ESFJ">ESFJ</option>
+            <option value="ESFP">ESFP</option>
+            <option value="ESTJ">ESTJ</option>
+            <option value="ESTP">ESTP</option>
+        </select>
+        <br>
+        <button type="submit">명함 생성하기</button>
+    </form>
+{% endif %}
+{% endblock content %}

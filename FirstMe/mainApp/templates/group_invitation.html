@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'group_invitation.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="title-bar">
+    <div>
+        <a href="#" onClick="history.back()">
+            <
+        </a>
+    </div>
+    <div>{{ group.name }}</div>
+    <div class="invisible"> > </div>
+</div>
+
+{% if error %}
+    <div class="alert">
+        <p class="alert-title">앗! 그룹 입구가 없어졌어요 😢</p>
+        <p class="alert-content">{{ error }}</p>
+        <p class="group-creater">그룹장 : {{ owner_name }}</p>
+    </div>
+
+
+
+{% else %}
+    <div class="mycard">
+        <div class="qr">
+            <img src="{% static qrcode_pic_route %}.png">
+        </div>
+        <div class="comment1">
+            <p>http://127.0.0.1:8000/group/{{ group.pk }}/{{ group.invitation_link }}/
+            <br>링크를 복사하여 그룹에 초대하세요!</br>
+        </div>
+
+
+
+    {% if user == group.creater %}
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <button submit>초대 QR/링크 닫기</button>
+            </form>
+        </div>
+        <div class="comment2">
+            <p>닫기 전에는 해당 QR/링크를 가진 모두가
+            <br>그룹에 들어올 수 있어요.
+            <br>그룹 목록에서 다시 만들 수 있으니,
+            <br>모두 들어온 후에는 꼭 닫아주세요!</p>
+        </div>
+    {% else %}
+        <div>
+            <a href="{% url 'group_detail' group.pk %}">그룹으로 이동하기</a>
+        </div>
+    {% endif %}
+    </div>
+
+{% endif %}
+<a href="{% url 'group_detail' group.pk %}">
+    <button>해당 그룹 목록으로</button>
+</a>
+
+
+{% endblock content %}

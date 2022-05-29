@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'make_group.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+<div class="title-bar">
+    <div>
+        <a href="#" onClick="history.back()"> < </a> 
+    </div>
+    <div>그룹 만들기</div>
+    <div class="invisible"> > </div>
+</div>
+<form method="POST">
+    {% csrf_token %}
+    <p>이름</p>
+    <input type="text" name="name" placeholder="그룹명을 입력하세요" required/>
+    <br>
+    <br>
+    <button type="submit">그룹 만들기</button>
+    <br>
+    <br>
+
+        <p> 함께하고 싶은 사람들이 있다면<br><strong>쉽게</strong> 'QR코드'로 친구 추가하고 <br> <strong>쉽게</strong> 번호 교환 하세요</p>
+
+</form>
+{% endblock content %}

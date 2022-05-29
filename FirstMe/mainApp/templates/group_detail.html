@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+{% endblock css %}
+
+{% block content %}
+ <!-- 로그인일 때 -->
+ <div class="entire-container">
+    {% if user.is_authenticated %}
+    <!-- <div class="navbar__menu__item">
+        <a href="/mycard/{{card.link}}/">내 명함 보기</a>
+    </div> -->
+    
+    <!-- 1:53 수정할부분  -->
+    <div class="top-bar">
+
+        <div class="invisible"> 숨겨 </div>
+        <p href="#" onclick="alert('개발자 : 고려대학교 멋쟁이 사자처럼 10기 7조 이유진 홍세린 엄혜영 박기만')">FirstMe</p>
+        <div class="logout">
+            <a href="{% url 'logout' %}">로그아웃</a>  
+        </div>
+        
+
+    </div>
+
+    <div class="mycard">
+        
+        <div OnClick="location.href ='{% url 'detail' card.link %}' " style="cursor:pointer;">
+            <div class="profile-img">
+                <div class="face"><img src="{{ profile_pic }}" height='200' width='200'/></div>
+                <div class="circle"><img src="https://ifh.cc/g/hlr225.png" height='200' width='200'></div>
+            </div>
+            
+            <div class="card-content">
+                <p class="card-name">{{ card.name }}</p>
+                <p class="phone-num">📞 &nbsp;&nbsp;{{ card.phone_num }}</p>
+                <p class="card-intro">💬&nbsp;&nbsp; {{ card.intro }}</p>
+                <p class="card-mbti">✨&nbsp;&nbsp; {{ card.mbti }}</p>
+            </div>
+                
+            </div>
+           
+        </div>
+    </div>
+    <div class="buttons">
+        <a href="{% url 'friend_list' card.link %}">
+            <button type="submit">친구 목록</button>
+        </a>
+        <a href="{% url 'group_list' card.link %}">
+            <button type="submit">그룹 목록</button>
+        </a>
+    </div>
+ </div>
+   
+    {% else %}
+    
+    <!-- <div class="title-bar">
+        <div>
+            <a href="#" onClick="history.back()"> < </a> 
+        </div>
+        <div>그룹 만들기</div>
+        <div class="invisible"> > </div> -->
+    <div class="logo-bar">
+        <div class="invisible">로그인</div>
+        <p href="#" onclick="alert('개발자 : 고려대학교 멋쟁이 사자처럼 10기 7조 이유진 홍세린 엄혜영 박기만')">FirstMe</p>
+        <div class="login">
+            <a href="{% url 'login' %}">로그인</a>
+        </div>
+        
+    </div>
+    
+
+    <div class="container">
+        <div class="ex_image">
+            <img src="https://ifh.cc/g/0S99sF.png" alt="명함예시이미지" />
+        </div>
+    
+    
+    <p class="intro">나만의 명함을 만들고 손쉽게 공유해 보세요:)</p>
+    
+        <button onclick = "location.href = '/registration/login/' ">지금 바로 시작하기</button>
+    
+    
+    {% endif %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'personal_invitation.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="title-bar">
+    <div>
+        <a href="#" onClick="history.back()">
+            < </a>
+    </div>
+    <div>{{ card.name }}</div>
+    <div class="invisible"> > </div>
+</div>
+
+{% if error %}
+    <div class="alert">
+        <p class="alert-title">앗! 친구의 명함이 없어졌어요 😢</p>
+        <p class="alert-content">{{ error }}</p>
+        <p class="group-creater">명함 주인 : {{ card.name }}</p>
+    </div>
+
+{% elif card_owner == guest %}
+    <div class="mycard">
+        <div class="qr">
+            <img src="{% static qrcode_pic_route %}.png">
+        </div>
+        <div class="comment1">
+            <p>http://127.0.0.1:8000/{{ card.link }}/{{ card.invitation_link }}/
+            <br>링크를 복사하여 명함을 소개하세요!</p>
+        </div>
+        <div>
+            <form method="POST">
+                {% csrf_token %}
+                <button submit>공유 QR/링크 닫기</button>
+            </form>
+        </div>
+        <div class="comment2">
+            <p>닫기 전에는 해당 QR/링크를 가진 모두가
+            <br>나의 명함을 구경할 수 있어요.</p>
+        </div>
+{% else %}
+    <a href="{% url 'detail' card.link %}">친구 명함으로 이동하기</a>
+{% endif %}
+
+    </div>
+
+{% endblock content %}

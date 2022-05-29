@@ -1,0 +1,184 @@
+/* 상단 바 */
+.title-bar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    color: #958D8D;
+    font-size: 24px;
+    margin-bottom: 20px;
+    
+    width: 332px;
+}
+
+.alert-title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(255, 103, 103, 0.53);
+    position: relative;
+    bottom: 30px;
+    margin-bottom: -10px;
+    text-align : center;
+}
+
+.alert-content {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(255, 103, 103, 0.53);
+    position: relative;
+    bottom: 30px;
+    margin-bottom: -10px;
+    text-align : center;
+}
+.invisible {
+    color: transparent;
+}
+
+.title-bar a {
+    text-decoration: none;
+    color: #958D8D;
+}
+
+.alert {
+    position: absolute;
+    padding: 0 25px;
+
+    top: 25px;
+
+    color: #958D8D;
+}
+
+.alert-title {
+    color: #FF8282;
+}
+
+
+
+/* 카드 */
+.mycard {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+
+    top: 50px;
+
+    width: 332px;
+    height: 530px;
+    background: linear-gradient(144.22deg, #FFCDA5 0%, #EE4D5F 100%);
+    border-radius: 10px;
+    filter: drop-shadow(4px 4px 8px rgba(230, 91, 91, 0.25));
+}
+
+
+.qr {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+    width: 173px;
+    height: 173px;
+
+    top: 100px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.comment1 {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+
+    top: 280px;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-weight: 300;
+
+}
+
+.comment2 {
+    position: relative;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+
+    top: 415px;
+}
+
+
+button {
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, 0);
+}
+
+form button {
+    /* bottom: 160px; */
+    top: 370px;
+    background: white;
+    border: solid white;
+    color: #FF8282;
+    font-size: 18px;
+    width: 216px;
+    height: 50px;
+    
+    border-radius: 10px;
+}
+
+a button {
+    bottom: 35px;
+    background: #FF8282;
+    border: solid #FF8282;
+    color: white;
+    font-size: 20px;
+    width: 332px;
+    height: 63px;
+
+    border-radius: 30px;
+
+    filter: drop-shadow(4px 4px 8px rgba(230, 91, 91, 0.25));
+}
+
+.alert-title{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: rgba(255, 103, 103, 0.53);
+    position: relative;
+    top: 20px;
+    margin-bottom: -10px;
+    text-align : center;
+}
+
+.alert-content{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    top: 10px;
+    color: rgba(255, 103, 103, 0.53);
+    position: relative;
+    margin-bottom: -10px;
+    text-align : center;
+}
+
+.group_name {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 22px;
+}

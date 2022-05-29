@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'login.css' %}">
+{% endblock css %}
+
+{% block content %}
+
+<div class="login-bar">
+    <a href="#" onClick="history.back()"> < </a> 
+    <p class="login">로그인</p>
+    <div class="invisible"> < </div>
+</div>
+
+<div class="container"> 
+    <div class="img">
+        <img src="https://ifh.cc/g/AvGA94.png">
+    </div>  
+    
+    <div class="input">
+        <section id="login">
+            <form method="POST">
+                {% csrf_token %}
+                {% if error %}
+                    <p class="error_message">{{ error }}</p>
+                {% endif %}
+                <div><input type="text" name="username"  class="account" placeholder="아이디" /></div>
+                <div><input type="password" name="password"  class="account" placeholder="비밀번호" /></div>
+                
+                <button type="submit"> 로그인</button>
+                <!-- <div>
+                    <a href="{% url 'signup' %}">회원가입</a>
+                </div> -->
+            </form>
+        </section>
+
+    </div>
+    <a class="signup" href="{% url 'signup' %}">회원가입</a> 
+</div>
+
+
+
+ 
+{% endblock content %}

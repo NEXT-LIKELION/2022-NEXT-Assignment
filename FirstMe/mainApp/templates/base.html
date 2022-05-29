@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="{% static 'base.css'%}" />
+    {% block css %}
+    {% endblock css %}
+    <title>FirstMe</title>
+</head>
+<body>
+
+    {% block title %} {% endblock title %}
+    
+    {% block content %} {% endblock content %} 
+    
+    
+</body>
+
+<script type="text/javascript">
+    function test() {
+        var p1 = document.getElementById('password1').value;
+        var p2 = document.getElementById('password2').value;
+        if (p1 != p2) {
+            alert("비밀번호가 일치 하지 않습니다");
+            return false;
+        }
+        else{
+            alert("비밀번호가 일치합니다");
+            return true;
+        }
+    }
+    
+</script>
+</html>
+

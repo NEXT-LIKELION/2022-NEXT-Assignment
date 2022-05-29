@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'group_list.css' %}">
+{% endblock css %}
+
+
+{% block content %}
+{% if error %}
+<p class="error_message">{{ error }}</p>
+{% else %}
+
+<div class="title-bar">
+    <div>
+        <a href="{% url 'home' %}"> < </a> 
+    </div>
+    <div class="title">그룹 목록</div>
+    <div class="invisible"> > </div>
+</div>
+
+<div class="groups">
+    {% for group in groups %}
+    <div class="hl"></div>
+    <div class="group">
+        <a href="{% url 'group_detail' group.pk %}">{{ group.name }}</a>
+    </div>
+    {% endfor %}
+</div>
+<a href="{% url 'friend_list' card.link %}">
+    <button type="submit">
+        친구 목록으로
+    </button>
+</a>
+{% endif %}
+{% endblock content %}
