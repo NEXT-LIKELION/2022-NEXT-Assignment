@@ -1,25 +1,15 @@
-# 2022-NEXT-Assignment
-NEXT X 멋쟁이사자처럼 10기
-<p align="center">
-<img width="300px" src="https://raw.githubusercontent.com/NEXT-LIKELION/NEXTx9th/master/img/logo.png">
-</p>
+# LionHacker22
 
-## 📚 Sessions
-3/10 - OT + Git, Github, README 기초 배우기
+해커톤 2조! 우리 조 이름은 "22학번2조"입니다! 1등하지 못해도 좋아요 ~ 22학번답게 즐겁게 코딩하며 ! 많이많이 배우는 게 목표입니다!
 
-3/14 - HTML/CSS Basic
+# 2조의 깃허브 관리자 한예진
 
-3/17 - CSS Advanced
+안녕하세요~ 해커톤 2조 국어국문학과 한예진입니다!
 
-3/21 - Python Basic
+# 짬 가득 22학번 윤정윤
 
-3/24 - Crawling
+내가 22학번이 아니면, 누가 22학번~??~? 22학번의 열정과 패기로 꼴찌는 면하겠습니다 ㅎㅎ
 
-3/28 - Django Basic
+# 죄가 많은 전성운
 
-3/31 - DB & django CR
-
-## 📑 Assignment
-> [과제 제출 페이지](https://github.com/NEXT-LIKELION/2022-NEXT-Assignment/issues)
-1. [Issue](https://github.com/NEXT-LIKELION/2022-NEXT-Assignment/issues) 탭을 통해 해당 세션 페이지 클릭하기
-2. 실행 화면과 연결된 레포지토리 주소를 댓글로 작성하기
+안녕하세요 해커존 2조 02년생 22학번 손이2개인 전성운입니다. 즐겁게하고싶습니다!

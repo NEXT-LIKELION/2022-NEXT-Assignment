@@ -1,0 +1,54 @@
+.middle {
+  width: 100%;
+  min-height: 100vh;
+  max-width: 450px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 35%;
+  max-width: 450px;
+  
+  position: fixed;
+  bottom: 0;
+  z-index: 10;
+  background-color: white;
+  border-radius: 12px 12px 0 0;
+  padding: 12px 0;
+}
+
+.locationImage {
+  margin-right: 4px;
+  width: 20px;
+  height: auto;
+}
+
+.closeButton {
+  width: 24px !important;
+  height: 24px !important;
+}
+.img-icon {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+.button-img {
+  width: 30%;
+}

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static './css/routebase.css' %}" />
+{% endblock head %}
+{% block middle %}
+
+<a href="https://map.kakao.com/?map_type=TYPE_MAP&target=walk&rt=%2C%2C505863%2C1134726&rt1=%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90%EC%A4%91%EC%95%99%EA%B4%91%EC%9E%A5&rt2=%EA%B3%A0%EB%A0%A4%EB%8C%80%ED%95%99%EA%B5%90%EA%B3%BC%ED%95%99%EB%8F%84%EC%84%9C%EA%B4%80&rtIds=%2C&rtTypes=%2C"><img class="routemap" src="{% static 'images\route\중광-sk.png' %}" /></a>
+<div class="container" id="routebase">
+    <a href="{% url 'index' %}"><img src="{% static './images/close_button.png' %}" class="closeButtonForRoute"></a>
+    <h3 style="margin-top:0px; margin-bottom:0px;">이동경로 검색</h3>
+    <div class="sentence">
+        <span><span id="red">출발지:</span> 중앙광장</span> &nbsp; &nbsp; &nbsp;
+        <img src="{% static './images/arrow.png' %}" class="arrow"> &nbsp; &nbsp; &nbsp;
+        <span><span id="red">도착지:</span> SK미래관</span>
+        </div>
+    <div class="button_main">
+        <img src="{% static './images/running.png' %}" class="runningImage"> &nbsp; &nbsp;
+        <span id="time">도보 예상시간 : 3분</span>
+    </div>
+    <div class="sentence">
+        <span><span id="red">SK미래관</span>에 도착하셨나요?</span>
+    </div>
+    <a href="{% url 'entrance' 6 %}" class="button_else" >건물 출입구 확인하기</a>
+    <a href="{% url 'facility' 6 %}" class="button_else">건물 내 시설 확인하기</a>
+</div>
+
+{% endblock middle %}
+{% block footer %}
+{% endblock footer%}

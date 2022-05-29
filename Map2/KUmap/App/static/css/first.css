@@ -1,0 +1,28 @@
+.main {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 450px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    background-color: #8B0029;
+}
+
+h1 {
+    font-size: 250%;
+    color: #E8DFD0;
+    text-align: center;
+}
+
+p {
+    color: white;
+    font-size: 90%;
+    text-align: center;
+    position: relative;
+    top: -30px;
+}
+.icon {
+    text-align: center;
+}
+.pad{
+    padding-top: 150px;
+}

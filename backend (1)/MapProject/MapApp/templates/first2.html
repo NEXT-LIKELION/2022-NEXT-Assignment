@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block middle %}
+    <video autoplay="autoplay" muted="muted" style="width: 100%; margin-bottom: -4px;">
+      <source src="{% static './videos/landing1.mp4' %}">
+    </video>
+    <a href="{% url 'first3' %}">
+      <div class="img-icon">
+        <img src="{% static 'images/12.png' %}" class="button-img" />
+      </div>
+    </a>
+{% endblock %}

@@ -1,0 +1,36 @@
+.main {
+    position: relative;
+    width: 375px;
+    margin: 0 auto;
+    border: 1px solid black;
+
+}
+/* 모바일웹 관련 사이트 참고 */
+
+#wrap {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    /* 모바일 평균 규격 기준 최소 너비 설정 */
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    -webkit-tap-highlight-color: rgba(0,0,0,.1);
+    /* 모바일에서 a태그 탭할 시 색상변경효과 초기화 */
+}
+
+@media screen and (max-width: 767px) {
+    #wrap {
+        width: calc(50%);
+    }
+}
+
+html {
+    -webkit-text-size-adjust: none;
+    /* 폰트의 크기 자동 변환 - 텍스트 크기를 자동으로 조절x
+    https://webclub.tistory.com/493 */
+}

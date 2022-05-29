@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static './css/entrance.css' %}" />
+{% endblock head %}
+
+<!-- def entrance(request, school_pk):
+    doors = Door.objects.filter(building__pk=school_pk)
+    infos = Info.objects.filter(school__pk=school_pk)
+    school = School.objects.get(pk=school_pk)
+    schoolj = serializers.serialize('json', [School.objects.filter(pk=school_pk)[0]])
+    doorsj = serializers.serialize('json', Door.objects.filter(building__pk=school_pk))
+    return render(request, 'entrance.html', {'school': school, 'schoolj': schoolj, 'doors': doors, 'infos': infos, 'doorsj': doorsj}) -->
+
+{% block middle %}
+
+{% for info in infos %}
+<div class="container" id="infoWindow{{info.pk}}" style="display: none;">
+        <img src="{% static './images/close_button.png' %}" class="closeButton" id="closeButton{{info.pk}}" onclick="closeButton({{info.pk}})">
+        <h3>{{ school.name }}</h3>
+        <div class="entrance_container">
+          <img src="{% static info.photo %}" class="entranceImage">
+        <div class="entranceInnerContainer">
+            <p>{{ info.title }}</p>
+            <p>{{ info.entrance }}</p>
+        </div>          
+        </div>
+        <a  href="{% url 'facility' school.pk %}" class="button_main" >건물 정보 및 시설 알아보기</a>        
+
+  </div>
+
+
+
+  {% endfor %}
+
+  <script>
+      function closeButton(pk){
+          var con=document.getElementById(`infoWindow${pk}`);
+          if(con.style.display == "none"){
+              con.style.display = "flex";
+          }
+          else{
+              con.style.display = "none";
+          }
+      }
+  </script>
+
+
+<div id="map" style="width: 100%; height: 100vh"></div>
+
+<script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8cd692fb7a99156246c6e7e5349b89e4"
+    ></script>
+<script>
+    /* 해당 pk에 맞는 건물 중심 지도 생성 */
+    const school = "{{schoolj}}"
+    const tempschool = JSON.parse(school.replace(/(&quot\;)/g,"\""))
+
+    const lat = tempschool[0].fields.latitude;
+    const lng = tempschool[0].fields.longitude;
+    
+    var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+      mapOption = {
+        center: new kakao.maps.LatLng(lat, lng), // 지도의 중심좌표
+        level: 1, // 지도의 확대 레벨
+      };
+    
+    var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+    /* 출입구 마커 생성 */
+    const door = "{{doorsj}}"
+    const tempdoor = JSON.parse(door.replace(/(&quot\;)/g,"\""))
+    console.log({tempdoor})
+    const positions = tempdoor.map(element =>{return  {
+          latlng: new kakao.maps.LatLng(element.fields.latitude, element.fields.longitude),
+          pk: element.fields.names,
+          lat: element.fields.latitude,
+          long: element.fields.longitude
+        }});
+console.log({positions})
+        var imageSrc = 'https://blogfiles.pstatic.net/MjAyMjA1MjlfMTQx/MDAxNjUzNzcwNDA1MzM0.WSUwETWUXQ6-28QU6qczi4UyTVxjOV8hDReijdbI7Xgg.zTtAicSjUBo2Coweu4deQp1pHPWQrTxZ817mUS1OElIg.PNG.whoy259/KakaoTalk_20220529_030530251_01.png',
+      imageSize = new kakao.maps.Size(45, 57);
+      imageOption = {offset: new kakao.maps.Point(30, 69)};
+
+      var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
+
+      positions.forEach(position => {
+         // 마커를 생성합니다
+         var marker = new kakao.maps.Marker({
+          map: map, // 마커를 표시할 지도
+          position: position.latlng, // 마커의 위치
+          image: markerImage
+        });
+        kakao.maps.event.addListener(marker, 'click', function(mouseEvent) { 
+        location.href = `javascript:display(${position.pk});`;
+      });})
+
+      function display(pk) {
+        var con = document.getElementById(`infoWindow${pk}`);
+        console.log(`infoWindow${pk}`)
+        if (con.style.display == "none") {
+          con.style.display = "flex";
+        }
+        else {
+          con.style.display = "none";
+        }
+      }
+
+    
+
+</script>
+{% endblock middle %}

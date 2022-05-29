@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    width: 200px;
+    border: 1px solid #000;
+  }
+
+  
+  .bar {
+    width: 120px;
+    height: 3px;
+    background-color: brown;
+  }
+  .button {
+    margin: 4px 0px 4px 0px;
+    background-color: rgb(233, 231, 231);
+    width: 160px;
+    height: 30px;
+    box-shadow: 5px 5px 4px rgb(53, 52, 52);
+    line-height: 30px;
+    
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+
+  .container2 {
+    display: block;
+    background: #50627F;
+    color: #fff;
+    text-align: center;
+    height: 24px;
+    line-height:22px;
+    border-radius:4px;
+    padding:0px 10px;
+  }
+

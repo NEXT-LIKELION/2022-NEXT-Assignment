@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block middle %}
+    <img src="{% static './images/start.png' %}" style="height:100vh; width:100%; object-fit: cover;"/>
+    <script>
+      setTimeout(function () {
+      window.location = "first2";
+      }, 3000);
+    </script>
+{% endblock %}

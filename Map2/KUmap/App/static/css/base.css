@@ -1,0 +1,27 @@
+
+.middle {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 450px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+    
+    border: 1px solid #000;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+    background-color: white;
+
+  }
+

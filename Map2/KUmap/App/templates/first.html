@@ -1,0 +1,83 @@
+{% comment %} {% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+  <link rel="stylesheet" type="text/css" href="{% static 'first.css' %}" />
+{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+
+{% block middle %}
+  <div class="main">
+    <h1>KU-MAP</h1>
+    <p>고려대학교 학생을 위한 지도</p>
+    <a href="{% url 'test3' %}">
+      <div class="icon">
+        <img src="{% static 'images/kumap.png' %}" />
+      </div>
+    </a>
+  </div>  
+
+{% endblock %}
+
+{% block footer %}
+
+{% endblock %} {% endcomment %}
+
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, intial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <title>🐯KUMAP🐯</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/first.css' %}" />
+</head>
+<body>
+  <div class="main pad">
+    <h1>KU-MAP</h1>
+    <p>고려대학교 학생을 위한 지도</p>
+    <a href="{% url 'test3' %}">
+      <div class="icon">
+        <img src="{% static 'images/kumap.png' %}" />
+      </div>
+    </a>
+  </div>
+ <script>
+    setTimeout(function () {
+      window.location = "first2";
+    }, 2000);
+  </script>
+</body>
+
+{% comment %} <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🐯KUMAP🐯</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}" />
+    {% block head %} 
+    {% endblock %}
+  </head>
+  <body>
+    <header>
+        {% block header %} 
+        {% endblock %}
+    </header>
+    <div class="middle">
+        {% block middle %}
+        {% endblock %}
+    </div>
+    <footer>
+        {% block footer %} 
+        {% endblock %}
+    </footer>
+  </body>
+</html> {% endcomment %}
+

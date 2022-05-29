@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static './css/facility.css' %}" />
+
+    {% endblock head %}
+
+{% block middle %}
+    <div class="wrapper">
+        <div>
+            <div class="top">
+                <h2>{{ school.name }}</h2>
+                <a href="{% url 'index' %}"><img src="{% static './images/close_button.png' %}" class="closeButton"></a>
+            </div>
+            <p style="color:gray;">{{ school.location }}</p>
+            
+        </div>        
+        <div>
+        <div class="header2" style="margin-bottom: 50px;">
+            <p>{{ school.information }}</p>
+        </div>
+        {% for lounge in lounges %}
+        <div>
+            <p class="list">{{ lounge.category }}</p>
+        </div>
+        <div class="block">
+            <div class="minicon">
+                <img src="{% static lounge.photos %}">
+            </div>
+            <div class="minicon2">
+                <h4>{{ lounge.lounge }}</h4>
+                <p class="info">{{ lounge.lounge_info }}</p>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+    </div>
+{% endblock middle %}

@@ -1,0 +1,32 @@
+{% load static %}
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, intial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+  />
+  <title>🐯KUMAP🐯</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'css/first2.css' %}" />
+  <meta http-equiv="refresh" content="2; url=localhost:8000/first2" />
+</head>
+<body>
+  <div class="main pad">
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1>건물별 출입가능 시간과</h1>
+    <h1>부대시설까지 한눈에</h1>
+    <br />
+    <p>출입문만 검색했을 뿐인데</p>
+    <p>등교시간이 5분 단축됐다.</p>
+    <br />
+    <br />
+    <a href="{% url 'test3' %}">
+      <div class="icon">
+        <img src="{% static 'images/12.png' %}" />
+      </div>
+    </a>
+    <img src="" />
+  </div>
+</body>
